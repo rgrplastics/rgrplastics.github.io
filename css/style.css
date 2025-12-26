@@ -93,10 +93,11 @@ h4,
 h5,
 h6 {
   color: var(--dark-text);
-  font-family: "Libre Baskerville", serif;
-  font-weight: inherit;
+  font-family: "Monda";
+  font-style: normal;
+  font-weight: 700;
   margin: 0 0 15px;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 /*h1 { font-size: 2em; margin: .67em 0 }
@@ -111,11 +112,11 @@ body {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  line-height: 1.6em;
-  font-weight: 400;
-  color: $gray-text;
+  font-family: "Kanit";
+  font-size: large;
+  line-height: 2em;
+  font-style: normal;
+  color: var(--gray-text);
 }
 
 a:hover,
@@ -235,7 +236,7 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2 {
-  color: $dark-bg;
+  color: var(--dark-bg);
   line-height: 1;
   margin-bottom: 45px;
   padding-bottom: 35px;
@@ -244,13 +245,13 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2 span {
-  color: $primary-blue;
+  color: var(--primary-blue);
 }
 
 .icon-and-border {
-  background: $white none repeat scroll 0 0;
+  background: var(--white) none repeat scroll 0 0;
   border-radius: 50%;
-  color: $primary-blue;
+  color: var(--primary-blue);
   display: inline-block;
   height: 40px;
   left: 0;
@@ -264,7 +265,7 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2::after {
-  border-bottom: 2px dashed $dark-bg;
+  border-bottom: 2px dashed var(--dark-bg);
   bottom: 0;
   content: "";
   height: 2px;
@@ -276,11 +277,11 @@ input:-webkit-autofill:focus {
 }
 
 .sky-gray-bg .area-title .icon-and-border {
-  background: $sky-bg;
+  background: var(--sky-bg);
 }
 
 .gray-bg .area-title .icon-and-border {
-  background: $gray-bg none repeat scroll 0 0;
+  background: var(--gray-bg) none repeat scroll 0 0;
 }
 
 /*------------------------
@@ -288,10 +289,10 @@ input:-webkit-autofill:focus {
 --------------------------*/
 
 .read-more {
-  background: $white none repeat scroll 0 0;
+  background: var(--white) none repeat scroll 0 0;
   border: 2px solid;
   border-radius: 5px;
-  color: $primary-blue;
+  color: var(--primary-blue);
   display: inline-block;
   font-weight: 700;
   margin-top: 10px;
@@ -300,9 +301,9 @@ input:-webkit-autofill:focus {
 }
 
 .read-more:hover {
-  background: $primary-blue none repeat scroll 0 0;
-  border-color: $primary-blue;
-  color: $white;
+  background: var(--primary-blue) none repeat scroll 0 0;
+  border-color: var(--primary-blue);
+  color: var(--white);
 }
 
 /*--------------------
@@ -829,7 +830,7 @@ input:-webkit-autofill:focus {
 .white h6,
 .white a,
 .white small {
-  color: $white;
+  color: var(--white);
 }
 
 /*--------------------
@@ -837,29 +838,29 @@ input:-webkit-autofill:focus {
 ---------------------*/
 
 .green-bg {
-  background: $very-light-bg;
+  background: var(--very-light-bg);
 }
 
 .bg-light-gray {
-  background-color: $light-bg;
+  background-color: var(--light-bg);
 }
 
 /*-------------------*/
 
 .gray-bg {
-  background: $gray-bg;
+  background: var(--gray-bg);
 }
 
 .sky-gray-bg {
-  background: $sky-bg;
+  background: var(--sky-bg);
 }
 
 .blue-bg {
-  background: $primary-blue;
+  background: var(--primary-blue);
 }
 
 .dark-blue-bg {
-  background: $secondary-blue;
+  background: var(--secondary-blue);
 }
 
 .dark-bg {
@@ -1130,7 +1131,7 @@ ul#nav {
 
 ul#nav li a {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  font-family: "Libre Baskerville", serif;
+  /* font-family: "Libre Baskerville", serif; */
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1503,7 +1504,7 @@ ul#nav li ul a,
 
 .video-play-button h3 {
   border-bottom: 1px solid;
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
   margin-bottom: 0;
   text-transform: uppercase;
 }
@@ -1841,7 +1842,7 @@ ul#nav li ul a,
 
 .price-rate h2 {
   color: #1193d4;
-  font-family: open sans;
+  /* font-family: open sans; */
   font-size: 70px;
   margin-bottom: 0;
 }
@@ -2099,7 +2100,7 @@ label.mt10.valid {
   right: 2em;
 }
 .get_quote {
-  font-family: "Libre Baskerville", serif;
+  /* font-family: "Libre Baskerville", serif; */
   text-align: center;
   color: black;
   font-size: 11px;

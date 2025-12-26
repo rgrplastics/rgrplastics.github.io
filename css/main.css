@@ -1,12 +1,12 @@
 @import 'variables.scss';
 
 .carousel-control {
-  color: $accent-cyan;
+  color: var(--accent-cyan);
 }
 
 .carousel-control:focus,
 .carousel-control:hover {
-  color: $accent-green;
+  color: var(--accent-green);
 }
 
 .carousel-control.right,
@@ -15,8 +15,8 @@
 }
 
 .carousel-indicators li {
-  background-color: $carousel-indicator-bg;
-  border: 1px solid $carousel-indicator-border;
+  background-color: var(--carousel-indicator-bg);
+  border: 1px solid var(--carousel-indicator-border);
 }
 
 /* Enhanced product card styling */
@@ -26,7 +26,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px $shadow-color !important;
+  box-shadow: 0 10px 20px var(--shadow-color) !important;
 }
 
 .card-img {
@@ -38,11 +38,11 @@
 }
 
 .card-body {
-  background: linear-gradient(135deg, $card-body-start 0%, $card-body-end 100%);
+  background: linear-gradient(135deg, var(--card-body-start) 0%, var(--card-body-end) 100%);
 }
 
 .card-title {
-  color: $card-title-blue;
+  color: var(--card-title-blue);
   margin-bottom: 1rem;
 }
 
