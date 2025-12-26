@@ -973,7 +973,7 @@ input:-webkit-autofill:focus {
 }
 
 .top-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/promo/promo-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/promo/promo-bg.jpg") no-repeat scroll center center / cover;
 }
 
 .top-area .area-bg::after {
@@ -2219,7 +2219,7 @@ label.mt10.valid {
 }
 
 .intro-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("img/intro-bg.png") repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/intro-bg.png") repeat scroll center center / cover;
 }
 
 .home-three .welcome-mockup img {
@@ -2429,7 +2429,7 @@ label.mt10.valid {
 }
 
 .video-area.style-three .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/rgr/bg_blow.png") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/rgr/bg_blow.png") no-repeat scroll center center / cover;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2451,7 +2451,7 @@ label.mt10.valid {
 }
 
 .home-three .footer-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("img/footer/footer-green-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/footer/footer-green-bg.jpg") no-repeat scroll center center / cover;
 }
 
 /*---------------------------------
