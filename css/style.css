@@ -1140,7 +1140,7 @@ ul#nav li a {
 
 ul#nav li a:hover,
 ul#nav li.active a {
-  text-decoration: line-through;
+  color: #1193d4;
 }
 
 .is-sticky ul#nav li a {
