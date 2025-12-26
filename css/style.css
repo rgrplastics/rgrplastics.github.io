@@ -37,6 +37,8 @@ Version: 1.0
     22. BLOG PAGES
 ----------------------------------------------------------------------------------------*/
 
+@import 'variables.scss';
+
 /*--------------------
     1. BASE CSS
 ----------------------*/
@@ -90,7 +92,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #292929;
+  color: var(--dark-text);
   font-family: "Libre Baskerville", serif;
   font-weight: inherit;
   margin: 0 0 15px;
@@ -113,7 +115,7 @@ body {
   font-size: 14px;
   line-height: 1.6em;
   font-weight: 400;
-  color: #6f6f6f;
+  color: $gray-text;
 }
 
 a:hover,
@@ -233,7 +235,7 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2 {
-  color: #1a264a;
+  color: $dark-bg;
   line-height: 1;
   margin-bottom: 45px;
   padding-bottom: 35px;
@@ -242,13 +244,13 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2 span {
-  color: #1193d4;
+  color: $primary-blue;
 }
 
 .icon-and-border {
-  background: #fff none repeat scroll 0 0;
+  background: $white none repeat scroll 0 0;
   border-radius: 50%;
-  color: #1193d4;
+  color: $primary-blue;
   display: inline-block;
   height: 40px;
   left: 0;
@@ -262,7 +264,7 @@ input:-webkit-autofill:focus {
 }
 
 .area-title h2::after {
-  border-bottom: 2px dashed #1a264a;
+  border-bottom: 2px dashed $dark-bg;
   bottom: 0;
   content: "";
   height: 2px;
@@ -274,11 +276,11 @@ input:-webkit-autofill:focus {
 }
 
 .sky-gray-bg .area-title .icon-and-border {
-  background: #e5eff6;
+  background: $sky-bg;
 }
 
 .gray-bg .area-title .icon-and-border {
-  background: #f5f4f4 none repeat scroll 0 0;
+  background: $gray-bg none repeat scroll 0 0;
 }
 
 /*------------------------
@@ -286,10 +288,10 @@ input:-webkit-autofill:focus {
 --------------------------*/
 
 .read-more {
-  background: #ffffff none repeat scroll 0 0;
+  background: $white none repeat scroll 0 0;
   border: 2px solid;
   border-radius: 5px;
-  color: #1193d4;
+  color: $primary-blue;
   display: inline-block;
   font-weight: 700;
   margin-top: 10px;
@@ -298,9 +300,9 @@ input:-webkit-autofill:focus {
 }
 
 .read-more:hover {
-  background: #1193d4 none repeat scroll 0 0;
-  border-color: #1193d4;
-  color: #fff;
+  background: $primary-blue none repeat scroll 0 0;
+  border-color: $primary-blue;
+  color: $white;
 }
 
 /*--------------------
@@ -827,7 +829,7 @@ input:-webkit-autofill:focus {
 .white h6,
 .white a,
 .white small {
-  color: #ffffff;
+  color: $white;
 }
 
 /*--------------------
@@ -835,29 +837,29 @@ input:-webkit-autofill:focus {
 ---------------------*/
 
 .green-bg {
-  background: #f6fafb;
+  background: $very-light-bg;
 }
 
 .bg-light-gray {
-  background-color: #f7f7f7;
+  background-color: $light-bg;
 }
 
 /*-------------------*/
 
 .gray-bg {
-  background: #f5f4f4;
+  background: $gray-bg;
 }
 
 .sky-gray-bg {
-  background: #e5eff6;
+  background: $sky-bg;
 }
 
 .blue-bg {
-  background: #1193d4;
+  background: $primary-blue;
 }
 
 .dark-blue-bg {
-  background: #1291ca;
+  background: $secondary-blue;
 }
 
 .dark-bg {
