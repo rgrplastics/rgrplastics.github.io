@@ -59,3 +59,34 @@
 #product-carousel .carousel-control {
   width: 5%;
 }
+
+/* Responsive adjustments for product carousel */
+@media (max-width: 767.98px) {
+  #product-carousel .card-img {
+    height: 250px; /* Fixed height for the image on mobile */
+    object-fit: cover;
+  }
+
+  #product-carousel .card-body {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  #product-carousel .card-title {
+    font-size: 1.25rem; /* Slightly smaller title on mobile */
+  }
+
+  #product-carousel .card-text {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Adjustments for tablets */
+  #product-carousel .card-body {
+    padding: 1.5rem;
+  }
+
+  #product-carousel .card-title {
+    font-size: 1.35rem;
+  }
+}

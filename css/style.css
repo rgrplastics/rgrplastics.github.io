@@ -37,7 +37,7 @@ Version: 1.0
     22. BLOG PAGES
 ----------------------------------------------------------------------------------------*/
 
-@import 'variables.scss';
+@import "variables.scss";
 
 /*--------------------
     1. BASE CSS
@@ -114,7 +114,7 @@ body {
 body {
   font-family: "Kanit";
   font-size: large;
-  line-height: 2em;
+  line-height: 1.5em;
   font-style: normal;
   color: var(--gray-text);
 }
@@ -976,11 +976,13 @@ input:-webkit-autofill:focus {
 }
 
 .top-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("../img/promo/promo-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/promo/promo-bg.jpg") no-repeat scroll
+    center center / cover;
 }
 
 .top-area .area-bg::after {
-  background: rgba(0, 0, 0, 0) url("img/home/home-wave.svg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/home/home-wave.svg") no-repeat scroll
+    center center / cover;
   bottom: -59px;
   height: 166px;
   top: auto;
@@ -1093,6 +1095,14 @@ input:-webkit-autofill:focus {
   transition: all 0.3s ease 0s;
 }
 
+.navbar-header span {
+  padding-top: 40px;
+  font-size: 28px;
+  font-weight: 700;
+    transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+}
+
 .navbar {
   border-bottom: 0 none;
   border-top: 0 none;
@@ -1152,6 +1162,14 @@ ul#nav li.active a {
 
 .is-sticky .navbar-header {
   margin-top: -2px;
+}
+
+.is-sticky .navbar-header span {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
 }
 
 .is-sticky .mainmenu-area {
@@ -1230,15 +1248,18 @@ ul#nav li ul a,
 }
 
 .slide-bg-one {
-  background: rgba(0, 0, 0, 0) url("img/slider/slide-1.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/slider/slide-1.jpg") no-repeat scroll
+    center center / cover;
 }
 
 .slide-bg-two {
-  background: rgba(0, 0, 0, 0) url("img/slider/slide_1.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/slider/slide_1.jpg") no-repeat scroll
+    center center / cover;
 }
 
 .slide-bg-three {
-  background: rgba(0, 0, 0, 0) url("img/slider/slide_2.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/slider/slide_2.jpg") no-repeat scroll
+    center center / cover;
 }
 
 .owl-item.active .welcome-single-slide .welcome-text h4 {
@@ -1425,7 +1446,8 @@ ul#nav li ul a,
 }
 
 .app-area-mockup-bg {
-  background: rgba(0, 0, 0, 0) url("img/mockups/app-area-mockup.png") no-repeat scroll center bottom / contain;
+  background: rgba(0, 0, 0, 0) url("img/mockups/app-area-mockup.png") no-repeat
+    scroll center bottom / contain;
   bottom: 0;
   height: 80%;
   position: absolute;
@@ -1459,11 +1481,13 @@ ul#nav li ul a,
 }
 
 .video-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/video/video-area-bg.jpg") no-repeat scroll center top / cover;
+  background: rgba(0, 0, 0, 0) url("img/video/video-area-bg.jpg") no-repeat
+    scroll center top / cover;
 }
 
 .video-area .area-bg::after {
-  background: rgba(0, 0, 0, 0) linear-gradient(120deg, transparent 50%, #1193d4 50%) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(120deg, transparent 50%, #1193d4 50%) repeat scroll 0 0;
   opacity: 0.9;
 }
 
@@ -1610,11 +1634,15 @@ ul#nav li ul a,
 }*/
 
 .screenshot-slider {
-  background: rgba(0, 0, 0, 0) url("img/screenshot/screenshot-mobile-mockup.png") no-repeat scroll center center / auto 100%;
+  background: rgba(0, 0, 0, 0)
+    url("img/screenshot/screenshot-mobile-mockup.png") no-repeat scroll center
+    center / auto 100%;
 }
 
 .screenshot-slider-2 {
-  background: rgba(0, 0, 0, 0) url("img/screenshot/screenshot-mobile-mockup.png") no-repeat scroll right center / auto 100%;
+  background: rgba(0, 0, 0, 0)
+    url("img/screenshot/screenshot-mobile-mockup.png") no-repeat scroll right
+    center / auto 100%;
 }
 
 .screenshot-area .single-screenshot {
@@ -1636,7 +1664,8 @@ ul#nav li ul a,
 ---------------------------------*/
 
 .download-area .area-bg::after {
-  background: rgba(0, 0, 0, 0) url("img/mockups/hand-mockup.png") no-repeat scroll center 106% / auto 80%;
+  background: rgba(0, 0, 0, 0) url("img/mockups/hand-mockup.png") no-repeat
+    scroll center 106% / auto 80%;
 }
 
 .download-area.section-padding {
@@ -1940,7 +1969,8 @@ ul#nav li ul a,
 }
 
 .contact-area .area-bg::after {
-  background: rgba(0, 0, 0, 0) url("img/mockups/map-mockup.png") no-repeat scroll left 4% center / auto 39%;
+  background: rgba(0, 0, 0, 0) url("img/mockups/map-mockup.png") no-repeat
+    scroll left 4% center / auto 39%;
 }
 
 .contact-area h2 {
@@ -2136,8 +2166,24 @@ label.mt10.valid {
 
 .home-three .scrolltotop:hover {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   color: #ffffff;
 }
 
@@ -2157,8 +2203,24 @@ label.mt10.valid {
 
 .home-three .is-sticky .mainmenu-area {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
 }
 
 .home-two .welcome-text {
@@ -2177,13 +2239,30 @@ label.mt10.valid {
 }
 
 .home-two .top-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("img/home/red-bg.png") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/home/red-bg.png") no-repeat scroll
+    center center / cover;
 }
 
 .home-three .top-area .area-bg::before {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
 }
 
 .home-two .features-top-area .area-title h2,
@@ -2216,13 +2295,30 @@ label.mt10.valid {
 
 .home-three .intro-area .area-bg::after {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   opacity: 0.9;
 }
 
 .intro-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("../img/intro-bg.png") repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/intro-bg.png") repeat scroll center
+    center / cover;
 }
 
 .home-three .welcome-mockup img {
@@ -2238,7 +2334,8 @@ label.mt10.valid {
 }
 
 .video-promo-slider {
-  background: rgba(0, 0, 0, 0) url("img/promo/promo-mockup.png") no-repeat scroll center center / auto 80%;
+  background: rgba(0, 0, 0, 0) url("img/promo/promo-mockup.png") no-repeat
+    scroll center center / auto 80%;
 }
 
 .single-video-promo-slide {
@@ -2269,7 +2366,8 @@ label.mt10.valid {
 -----------------------------*/
 
 .promo-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/video/video-area-bg-2.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/video/video-area-bg-2.jpg") no-repeat
+    scroll center center / cover;
 }
 
 .promo-area .area-bg::before {
@@ -2326,7 +2424,8 @@ label.mt10.valid {
 }
 
 .subscriber-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/subscriber/subscriber-area-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/subscriber/subscriber-area-bg.jpg")
+    no-repeat scroll center center / cover;
 }
 
 .subscriber-area .subscriber-form {
@@ -2378,8 +2477,24 @@ label.mt10.valid {
   -webkit-animation: button_animation_2 1s infinite;
   animation: button_animation_2 1s infinite;
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
 }
 
 .home-three .video-area-content .video-area-popup:hover {
@@ -2432,7 +2547,8 @@ label.mt10.valid {
 }
 
 .video-area.style-three .area-bg {
-  background: rgba(0, 0, 0, 0) url("../img/rgr/bg_blow.png") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/machine1.png") no-repeat scroll
+    center center / cover;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -2441,8 +2557,24 @@ label.mt10.valid {
 .video-area.style-three .area-bg:after,
 .faqs-area .area-bg:after {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
 }
 
 /*--------------------------------
@@ -2450,11 +2582,13 @@ label.mt10.valid {
 ----------------------------------*/
 
 .footer-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("img/footer/footer-red-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/footer/footer-red-bg.jpg") no-repeat
+    scroll center center / cover;
 }
 
 .home-three .footer-area .area-bg::before {
-  background: rgba(0, 0, 0, 0) url("../img/footer/footer-green-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("../img/footer/footer-green-bg.jpg")
+    no-repeat scroll center center / cover;
 }
 
 /*---------------------------------
@@ -2531,7 +2665,8 @@ label.mt10.valid {
 --------------------------*/
 
 .team-three .member-thumb {
-  background: rgba(0, 0, 0, 0) url("img/team/member-bg.png") no-repeat scroll center center / auto 100%;
+  background: rgba(0, 0, 0, 0) url("img/team/member-bg.png") no-repeat scroll
+    center center / auto 100%;
   margin-bottom: 30px;
   padding-bottom: 30px;
 }
@@ -2548,8 +2683,24 @@ label.mt10.valid {
 
 .team-three .social-bookmark li a:hover {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   color: #fff;
   border-color: #00e2d9;
 }
@@ -2559,8 +2710,19 @@ label.mt10.valid {
 ----------------------------*/
 
 .testmonial-three .testmonial-details {
-  background: #00e2d9 -webkit-gradient(linear, left top, right top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd)) repeat scroll 0 0;
-  background: #00e2d9 linear-gradient(to right, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd) repeat scroll 0 0;
+  background: #00e2d9 -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#81ee8e),
+      color-stop(#2deab6),
+      color-stop(#00e2d9),
+      color-stop(#00d7f2),
+      to(#00c9fd)
+    ) repeat scroll 0 0;
+  background: #00e2d9
+    linear-gradient(to right, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd)
+    repeat scroll 0 0;
   border-radius: 5px;
   margin-bottom: 30px;
   padding: 30px;
@@ -2603,8 +2765,19 @@ label.mt10.valid {
 }
 
 .testmonial-three .author-details-and-designation img {
-  background: rgba(0, 0, 0, 0) -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd)) repeat scroll 0 0;
-  background: rgba(0, 0, 0, 0) linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) -webkit-gradient(
+      linear,
+      right top,
+      left top,
+      from(#81ee8e),
+      color-stop(#2deab6),
+      color-stop(#00e2d9),
+      color-stop(#00d7f2),
+      to(#00c9fd)
+    ) repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd) repeat
+    scroll 0 0;
   border-radius: 50%;
   left: 0;
   padding: 2px;
@@ -2644,8 +2817,24 @@ label.mt10.valid {
 
 .home-three .qs-box:hover .qs-box-icon i {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   border-color: #00e2d9;
 }
 
@@ -2661,8 +2850,24 @@ label.mt10.valid {
 
 .home-three .video-button {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
 }
 
 .video-button:hover {
@@ -2700,8 +2905,24 @@ label.mt10.valid {
 
 .home-three .contact-form button:hover {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   color: #fff;
   border-color: #00e2d9;
 }
@@ -2745,8 +2966,24 @@ label.mt10.valid {
 
 #accordion .panel-title a {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   border: 1px solid transparent;
   border-radius: 30px;
   color: #fff;
@@ -2768,8 +3005,24 @@ label.mt10.valid {
 #accordion .panel-title a::after,
 #accordion .panel-title a.collapsed::after {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   border: 1px solid transparent;
   border-radius: 50%;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
@@ -2831,7 +3084,8 @@ label.mt10.valid {
 }
 
 .page-barner-area .area-bg {
-  background: rgba(0, 0, 0, 0) url("img/blog/blog-page-bg.jpg") no-repeat scroll center center / cover;
+  background: rgba(0, 0, 0, 0) url("img/blog/blog-page-bg.jpg") no-repeat scroll
+    center center / cover;
 }
 
 .single-page .page-barner-area .area-bg::before {
@@ -2888,7 +3142,8 @@ label.mt10.valid {
 }
 
 .single-widget h3::after {
-  background: rgba(0, 0, 0, 0) url("img/widgets-line.png") no-repeat scroll left bottom;
+  background: rgba(0, 0, 0, 0) url("img/widgets-line.png") no-repeat scroll left
+    bottom;
   bottom: 0;
   content: "";
   height: 10px;
@@ -3029,8 +3284,24 @@ label.mt10.valid {
 
 .widget-subscriber-form {
   background: #00e2d9;
-  background-image: -webkit-gradient(linear, right top, left top, from(#81ee8e), color-stop(#2deab6), color-stop(#00e2d9), color-stop(#00d7f2), to(#00c9fd));
-  background-image: linear-gradient(to left, #81ee8e, #2deab6, #00e2d9, #00d7f2, #00c9fd);
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#81ee8e),
+    color-stop(#2deab6),
+    color-stop(#00e2d9),
+    color-stop(#00d7f2),
+    to(#00c9fd)
+  );
+  background-image: linear-gradient(
+    to left,
+    #81ee8e,
+    #2deab6,
+    #00e2d9,
+    #00d7f2,
+    #00c9fd
+  );
   padding: 20px;
 }
 

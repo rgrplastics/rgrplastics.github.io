@@ -114,9 +114,10 @@
                 <div class="mainmenu-area-bg"></div>
                 <nav class="navbar">
                     <div class="container">
-                        <div class="navbar-header">
-                            <a href="#home" class="navbar-brand"><img src="img/logo.png" alt="logo"
-                                    style="width: 3em;" /></a>
+                        <div class="navbar-header d-flex flex-column flex-v-center justify-content-center">
+                            <div > <a href="#home" class="navbar-brand"><img src="img/logo.png" alt="logo"
+                                    style="width: 3em;"/></a></div>
+                            <span>RGR PLASTICS</span>
                         </div>
                         <div id="main-nav" class="stellarnav">
                             <ul id="nav" class="nav navbar-nav pull-right">
@@ -307,7 +308,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="video-area-content wow fadeIn pull-right">
-                        <img src="img/rgr/bg_blow.png"
+                        <img src="img/machine2.png" style="max-width: 400px;"
                             alt="Advanced blow molding technology at RGR Plastics manufacturing unit">
                     </div>
                 </div>
@@ -315,12 +316,12 @@
         </div>
     </section>
 
-    <section class="work-area relative padding-50-50" id="products">
+    <section class="work-area relative padding-50-50 fitscreen" id="products">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
                     <div class="area-title text-center wow fadeIn mb0">
-                        <h2 style="margin-bottom: 5px;">Products</h2>
+                        <h2 class="mt30 mb30">Products</h2>
                         <p>
                             Discover our extensive range of plastic containers crafted in custom shapes and sizes. With
                             years of expertise, we deliver high-quality solutions tailored to meet diverse customer
@@ -329,7 +330,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt100">
                 <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div id="product-carousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators" id="our_products_data_1">
@@ -366,9 +367,7 @@
                                                         <div class="col-md-6">
                                                             <div class="card-body d-flex flex-column justify-content-center">
                                                                 <h4 class="card-title text-primary font-weight-bold">${product.product_code}</h4>
-                                                                <p class="card-text"><strong>Name:</strong> ${product.name || 'N/A'}</p>
-                                                                <p class="card-text"><strong>Dimensions:</strong> Height: ${product.height}mm, Diameter: ${product.diameter}mm</p>
-                                                                <p class="card-text"><strong>Weight:</strong> ${product.weight}g</p>
+                                                                <p class="card-text"><strong>Purpose:</strong> ${product.purpose || 'N/A'}</p>
                                                                 <p class="card-text"><strong>Colours:</strong> ${product.colours.join(", ")}</p>
                                                                 <p class="card-text"><strong>Material:</strong> ${product.material.join(", ")}</p>
                                                                 <p class="card-text"><strong>Grade:</strong> ${product.grade.join(", ")}</p>
@@ -390,7 +389,7 @@
                     </div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 50px;">
+            <p style="text-align: center; margin-top: 100px;">
                 <strong>Place your order by adding items to your cart and submitting it. Our team will contact you
                     shortly to confirm details.</strong>
             </p>
@@ -405,57 +404,38 @@
                     <div class="area-title wow fadeIn mb50">
                         <h2>Contact Us</h2>
                         <p>Get in touch with us for inquiries, orders, or custom solutions</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mb50">
-                <div class="col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="img/logo_rgr.png" alt="R G R Plastics Logo" class="img-fluid mb20"
-                                style="max-width: 5em;">
-                            <h4 class="card-title">R G R Plastics</h4>
-                            <p class="text-muted">GST: <strong>33SMZPS1099L1ZK</strong></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card text-center">
-                        <div class="card-body">
-                            <img src="img/logo_rgr_p.png" alt="R G R Plastics and Traders Logo" class="img-fluid mb20"
-                                style="max-width: 5em;">
-                            <h4 class="card-title">R G R Plastics and Traders</h4>
-                            <p class="text-muted">GST: <strong>33BBBPV3945E1ZP</strong></p>
-                        </div>
+                        <p>R G R Plastics - <strong>33SMZPS1099L1ZK</strong></p>
+                        <p>R G R Plastics and Traders - <strong>33BBBPV3945E1ZP</strong></p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="contact-actions text-center mb20">
+                    <div class="contact-actions mb20">
                         <h3>Get in Touch</h3>
                         <div class="row">
-                            <div class="col col-md-6">
+                            <div class="col col-md-3 text-center">
                                 <a href="https://api.whatsapp.com/send?phone=919500369437"
-                                    class="btn btn-success btn-lg btn-block" target="_blank"
-                                    style="font-size: 24px; padding: 20px;">
-                                    <i class="fa fa-whatsapp" style="font-size: 48px;"></i><br>
-                                    WhatsApp Us
+                                    class="btn btn-success btn-lg btn-block " target="_blank"
+                                    style="font-size: 18px; color: #fff; border-radius: 20px">
+                                    <i class="fa fa-whatsapp" style="font-size: 48px; color: #fff;"></i><br>
+                                    WhatsApp
                                 </a>
                             </div>
-                            <div class="col col-md-6">
-                                <a href="mailto:veeramanikandan.tvz@gmail.com" class="btn btn-primary btn-lg btn-block"
-                                    style="font-size: 24px; padding: 20px;">
-                                    <i class="fa fa-envelope" style="font-size: 48px;"></i><br>
-                                    Email Us
+                            <div class="col col-md-3 text-center">
+                                <a href="mailto:veeramanikandan.tvz@gmail.com" class="btn btn-lg btn-block"
+                                    style="font-size: 18px; color: #000; border-radius: 20px; background-color: #fff;">
+                                    <img src="/img/gmail.png" style="max-width: 48px;"><br>
+                                    Email
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="contact-info">
-                        <div class="card mb20">
+                        <div class="card mb20 mt50">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fa fa-user"></i> Contact</h3>
+                                <h3 class="card-title"><i class="fa fa-user" style="padding-right: 15px;"></i> Contact
+                                </h3>
                             </div>
                             <div class="card-body">
                                 <h4><strong>G Veeramanikandan</strong></h4>
@@ -465,9 +445,10 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card mb20 mt50">
                             <div class="card-header">
-                                <h3 class="card-title"><i class="fa fa-credit-card"></i> Payment Methods</h3>
+                                <h3 class="card-title"><i class="fa fa-credit-card" style="padding-right: 15px;"></i>
+                                    Payment Methods</h3>
                             </div>
                             <div class="card-body">
                                 <p>We accept payments via: CASH, NEFT / IMPS, All UPI methods (GPay, PhonePe, etc.)</p>
@@ -478,7 +459,8 @@
                 <div class="col-md-6">
                     <div class="card mb20">
                         <div class="card-header">
-                            <h3 class="card-title"><i class="fa fa-map-marker"></i> Our Location</h3>
+                            <h3 class="card-title"><i class="fa fa-map-marker" style="padding-right: 15px;"></i> Our
+                                Location</h3>
                         </div>
                         <div class="card-body">
                             <address>
