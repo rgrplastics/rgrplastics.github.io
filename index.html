@@ -318,7 +318,7 @@
     <section class="work-area relative padding-50-50" id="products">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3 col-sm-12 col-xs-12">
+                <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 col-sm-12 col-xs-12">
                     <div class="area-title text-center wow fadeIn mb0">
                         <h2 style="margin-bottom: 5px;">Products</h2>
                         <p>
@@ -331,52 +331,47 @@
             </div>
             <div class="row">
                 <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div id="products" class="carousel slide" data-ride="carousel">
+                    <div id="product-carousel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators" id="our_products_data_1">
                         </ol>
                         <div class="carousel-inner" id="our_products_data_2">
                         </div>
-                        <a class="left carousel-control" href="#products" data-slide="prev">
+                        <a class="left carousel-control" href="#product-carousel" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control" href="#products" data-slide="next">
+                        <a class="right carousel-control" href="#product-carousel" data-slide="next">
                             <span class="glyphicon glyphicon-chevron-right"></span>
                             <span class="sr-only">Next</span>
                         </a>
                         <script>
                             fetch('assests/products.json')
                                 .then(response => response.json())
-                                .then(myPositions => {
+                                .then(data => {
+                                    const myPositions = data;
                                     let ourProductsDataHTML = "";
                                     let ourProductsIDHTML = "";
 
                                     myPositions.forEach((product, i) => {
                                         const addclassID = i === 0 ? 'class="active"' : "";
-                                        const addclassData = i === 0 ? 'class="item active"' : 'class="item"';
-                                        ourProductsIDHTML += `<li data-target="#products" data-slide-to="${i}" ${addclassID}></li>`;
+                                        const addclassData = i === 0 ? 'class="item active d-flex justify-content-center"' : 'class="item d-flex justify-content-center"';
+                                        ourProductsIDHTML += `<li data-target="#product-carousel" data-slide-to="${i}" ${addclassID}></li>`;
                                         ourProductsDataHTML += `
                                             <div ${addclassData}>
-                                                <div class="container">
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-md-8">
-                                                            <div class="card shadow-lg border-0 rounded-lg" style="overflow: hidden;">
-                                                                <div class="row no-gutters">
-                                                                    <div class="col-md-6">
-                                                                        <img src="https://source.unsplash.com/random/400x300?plastic+container" alt="${product.name || 'Product'} container" class="card-img h-100" style="object-fit: cover;">
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="card-body d-flex flex-column justify-content-center">
-                                                                            <h4 class="card-title text-primary font-weight-bold">${product.product_code}</h4>
-                                                                            <p class="card-text"><strong>Name:</strong> ${product.name || 'N/A'}</p>
-                                                                            <p class="card-text"><strong>Dimensions:</strong> Height: ${product.height}mm, Diameter: ${product.diameter}mm</p>
-                                                                            <p class="card-text"><strong>Weight:</strong> ${product.weight}g</p>
-                                                                            <p class="card-text"><strong>Colours:</strong> ${product.colours.join(", ")}</p>
-                                                                            <p class="card-text"><strong>Material:</strong> ${product.material.join(", ")}</p>
-                                                                            <p class="card-text"><strong>Grade:</strong> ${product.grade.join(", ")}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                <div class="card shadow-lg border-0 rounded-lg" style="overflow: hidden; max-width: 800px;">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-md-6">
+                                                            <img src="/img/container.jpg" alt="${product.name || 'Product'} container" class="card-img h-100" style="object-fit: cover;">
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="card-body d-flex flex-column justify-content-center">
+                                                                <h4 class="card-title text-primary font-weight-bold">${product.product_code}</h4>
+                                                                <p class="card-text"><strong>Name:</strong> ${product.name || 'N/A'}</p>
+                                                                <p class="card-text"><strong>Dimensions:</strong> Height: ${product.height}mm, Diameter: ${product.diameter}mm</p>
+                                                                <p class="card-text"><strong>Weight:</strong> ${product.weight}g</p>
+                                                                <p class="card-text"><strong>Colours:</strong> ${product.colours.join(", ")}</p>
+                                                                <p class="card-text"><strong>Material:</strong> ${product.material.join(", ")}</p>
+                                                                <p class="card-text"><strong>Grade:</strong> ${product.grade.join(", ")}</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -386,13 +381,16 @@
 
                                     document.getElementById("our_products_data_1").innerHTML = ourProductsIDHTML;
                                     document.getElementById("our_products_data_2").innerHTML = ourProductsDataHTML;
+
+                                    // Initialize the carousel after adding items
+                                    $('#product-carousel').carousel();
                                 })
                                 .catch(error => console.error('Error loading products:', error));
                         </script>
                     </div>
                 </div>
             </div>
-            <p style="text-align: center;">
+            <p style="text-align: center; margin-top: 50px;">
                 <strong>Place your order by adding items to your cart and submitting it. Our team will contact you
                     shortly to confirm details.</strong>
             </p>

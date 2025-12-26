@@ -50,3 +50,12 @@
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
+
+#product-carousel .carousel-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#product-carousel .carousel-control {
+  width: 5%;
+}
