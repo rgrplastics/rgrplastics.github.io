@@ -90,3 +90,34 @@
     font-size: 1.35rem;
   }
 }
+
+.poweredby-icon a {
+  background-color: transparent;
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 5px;
+  background: url(../img/poweredby-i.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.poweredby-icon a:hover {
+  background-color: transparent;
+  width: 25px;
+  height: 40px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 5px;
+  background: url(../img/poweredby.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
