@@ -1,36 +1,112 @@
 // Color Variables for RGR Plastics Website
+// All design tokens extracted from style.css and main.css
 
 :root {
-  // Primary Colors
+  // ========== PRIMARY COLORS ==========
   --primary-blue: #1193d4;
   --secondary-blue: #1291ca;
   --accent-cyan: #00d4f5;
   --accent-green: #7aed91;
-
-  // Text Colors
+  
+  // Home Two and Three Theme Colors
+  --theme-red: #ef494d;
+  --theme-cyan: #00e2d9;
+  --theme-cyan-gradient-1: #81ee8e;
+  --theme-cyan-gradient-2: #2deab6;
+  --theme-cyan-gradient-3: #00d7f2;
+  --theme-cyan-gradient-4: #00c9fd;
+  
+  // ========== TEXT COLORS ==========
   --dark-text: #292929;
   --gray-text: #6f6f6f;
   --white: #ffffff;
-
-  // Background Colors
+  --light-gray-text: #757575;
+  
+  // ========== BACKGROUND COLORS ==========
   --light-bg: #f7f7f7;
   --sky-bg: #e5eff6;
   --gray-bg: #f5f4f4;
   --very-light-bg: #f6fafb;
-
-  // Card and UI Colors
+  --form-bg: #f8fafc;
+  --dark-bg: #1a264a;
+  --black-overlay-85: rgba(0, 0, 0, 0.85);
+  --black-overlay-90: rgba(0, 0, 0, 0.9);
+  --black-overlay-70: rgba(0, 0, 0, 0.7);
+  --black-overlay-60: rgba(0, 0, 0, 0.6);
+  --black-overlay-50: rgba(0, 0, 0, 0.5);
+  
+  // ========== CARD AND UI COLORS ==========
   --card-title-blue: #007bff;
   --card-body-start: #f8f9fa;
   --card-body-end: #e9ecef;
   --shadow-color: rgba(0, 0, 0, 0.2);
-
-  // Carousel Colors
+  
+  // ========== CAROUSEL COLORS ==========
   --carousel-indicator-bg: rgb(0, 213, 244);
   --carousel-indicator-border: #77ed92;
-
-  // Dark Theme Colors
-  --dark-bg: #1a264a;
-
-  // Additional Colors
+  
+  // ========== BORDER & OUTLINE COLORS ==========
   --border-gray: #dddddd;
+  --border-dark: #1a1a1a;
+  --border-light: #ddd;
+  --border-lighter: #dddfe0;
+  
+  // ========== SOCIAL COLORS ==========
+  --social-facebook: #677fb5;
+  --social-twitter: #70c2e9;
+  --social-instagram: #895a4d;
+  --social-google-plus: #d34836;
+  --social-linkedin: #007ab9;
+  --social-dribble: #e299c2;
+  --social-flickr: #ff3ba4;
+  --social-pinterest: #d8545d;
+  
+  // ========== SPACING SCALE ==========
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  --spacing-2xl: 50px;
+  --spacing-3xl: 70px;
+  --spacing-4xl: 100px;
+  
+  // ========== SIZE SCALE ==========
+  --size-icon-sm: 30px;
+  --size-icon-md: 40px;
+  --size-icon-lg: 50px;
+  --size-icon-xl: 60px;
+  --size-icon-2xl: 80px;
+  
+  // ========== FONT SIZES ==========
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 22px;
+  --font-size-4xl: 26px;
+  --font-size-5xl: 28px;
+  --font-size-6xl: 30px;
+  --font-size-heading-lg: 40px;
+  --font-size-heading-xl: 70px;
+  
+  // ========== BORDER RADIUS ==========
+  --border-radius-sm: 5px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 50px;
+  
+  // ========== TRANSITIONS ==========
+  --transition-fast: 0.3s;
+  --transition-default: all 0.3s ease 0s;
+  --transition-slow: 1s ease;
+  --easing-out: ease-out;
+  
+  // ========== SHADOWS ==========
+  --shadow-sm: 0 0 3px #dddddd;
+  --shadow-md: 0 0 10px #dddddd;
+  --shadow-lg: 0 0 20px #dddddd;
+  --shadow-overlay: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  --shadow-input: 0 3px 10px rgba(0, 0, 0, 0.58);
 }
