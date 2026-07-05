@@ -1,13 +1,79 @@
 [
-{"product_code":"RGR-A001","purpose":"Sunnambu/Hydrated lime","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A002","purpose":"Acid Bottle/Harpic","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin","Recycled"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A003","purpose":"Pain Balm","colours":[ "White"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A004","purpose":"Asafoetida","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A005","purpose":"Sandal Powder/Pooja Products","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A006","purpose":"Pachamirtham/Pooja Products","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A007","purpose":"Camphor/Sandal Powder/Pooja Products/Carrom Powder","colours":[ "Red","Green","Blue","Yellow","White"],"material":[ "Virgin","Recycled"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A008","purpose":"Panner Bottle","colours":[ "Half White","Virgin White","MW","Yellow"],"material":[ "Virgin"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A009","purpose":"Doop","colours":[ "Red","Green","Blue","Yellow"],"material":[ "Recycled"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A010","purpose":"Oil Containers","colours":[ "White"],"material":[ "Virgin","Recycled"],"grade":[ "HDPE"]},
-{"product_code":"RGR-A011","purpose":"Tin Lid","colours":[ "Red","Green","Blue","Yellow","White","Orange"],"material":[ "Virgin"],"grade":[ "HDPE"]}
+  {
+    "product_code": "RGR-A001",
+    "purpose": "Sunnambu/Hydrated lime",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A002",
+    "purpose": "Acid Bottle/Harpic",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin", "Recycled"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A003",
+    "purpose": "Pain Balm",
+    "colours": ["White"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A004",
+    "purpose": "Asafoetida",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A005",
+    "purpose": "Sandal Powder/Pooja Products",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A006",
+    "purpose": "Pachamirtham/Pooja Products",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A007",
+    "purpose": "Camphor/Sandal Powder/Pooja Products/Carrom Powder",
+    "colours": ["Red", "Green", "Blue", "Yellow", "White"],
+    "material": ["Virgin", "Recycled"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A008",
+    "purpose": "Panner Bottle",
+    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A009",
+    "purpose": "Doop",
+    "colours": ["Red", "Green", "Blue", "Yellow"],
+    "material": ["Recycled"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A010",
+    "purpose": "Oil Containers",
+    "colours": ["White"],
+    "material": ["Virgin", "Recycled"],
+    "grade": ["HDPE"]
+  },
+  {
+    "product_code": "RGR-A011",
+    "purpose": "Tin Lid",
+    "colours": ["Red", "Green", "Blue", "Yellow", "White", "Orange"],
+    "material": ["Virgin"],
+    "grade": ["HDPE"]
+  }
 ]
