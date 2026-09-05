@@ -1,106 +1,191 @@
 [
   {
-    "product_code": "RGR-A001",
-    "display_order": 3,
-    "purpose": "Sunnambu/Hydrated lime",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A002",
-    "display_order": 2,
-    "purpose": "Acid Bottle/Harpic",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin", "Recycled"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A003",
-    "display_order": 3,
-    "purpose": "Pain Balm",
-    "colours": ["White"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A004",
-    "display_order": 4,
-    "purpose": "Camphor",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A004a",
-    "display_order": 5,
-    "purpose": "Camphor Small",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A012",
-    "display_order": 6,
-    "purpose": "Asafoetida",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A005",
-    "display_order": 7,
-    "purpose": "Sandal Powder/Pooja Products",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A006",
-    "display_order": 8,
-    "purpose": "Pachamirtham/Pooja Products",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A007",
-    "display_order": 9,
-    "purpose": "Sandal Powder/Pooja Products/Carrom Powder",
-    "colours": ["Red", "Green", "Blue", "Yellow", "White"],
-    "material": ["Virgin", "Recycled"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A008",
-    "display_order": 10,
-    "purpose": "Panner Bottle",
-    "colours": ["Half White", "Virgin White", "MW", "Yellow"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A009",
-    "display_order": 11,
-    "purpose": "Doop",
-    "colours": ["Red", "Green", "Blue", "Yellow"],
-    "material": ["Recycled"],
-    "grade": ["HDPE"]
-  },
-  {
-    "product_code": "RGR-A010",
+    "product_code": "RGR-010",
     "display_order": 1,
     "purpose": "Oil Containers",
     "colours": ["White"],
-    "material": ["Virgin", "Recycled"],
-    "grade": ["HDPE"]
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["100ml", "200ml", "500ml", "1000ml"]
   },
   {
-    "product_code": "RGR-A011",
+    "product_code": "RGR-002",
+    "display_order": 2,
+    "purpose": "Acid Bottle",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["500ml", "1000ml"]
+  },
+  {
+    "product_code": "RGR-001",
+    "display_order": 3,
+    "purpose": "Sunnambu/Hydrated lime",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-003",
+    "display_order": 4,
+    "purpose": "Pain Balm",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-1",
+    "display_order": 5,
+    "purpose": "Camphor Small",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-2",
+    "display_order": 6,
+    "purpose": "Camphor Medium",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-005-2",
+    "display_order": 7,
+    "purpose": "Camphor - No.1 / Specimen Container",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-6",
+    "display_order": 8,
+    "purpose": "Camphor - No.1",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-7",
+    "display_order": 9,
+    "purpose": "Camphor-6",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-3",
+    "display_order": 10,
+    "purpose": "Camphor-3",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-005-1",
+    "display_order": 11,
+    "purpose": "Camphor / Sandal Powder (A Grade) / Carrom Powder",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-4",
+    "display_order": 12,
+    "purpose": "Camphor Medium",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-5",
     "display_order": 13,
-    "purpose": "Tin Lid",
-    "colours": ["Red", "Green", "Blue", "Yellow", "White", "Orange"],
-    "material": ["Virgin"],
-    "grade": ["HDPE"]
+    "purpose": "Camphor XL",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-004-8",
+    "display_order": 14,
+    "purpose": "Camphor 250G",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-005-3",
+    "display_order": 15,
+    "purpose": "Sandal Tablets",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-005-4",
+    "display_order": 16,
+    "purpose": "Sandal Powder",
+    "colours": ["Transparent"],
+    "material": "Virgin",
+    "grade": "PP",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-006-1",
+    "display_order": 17,
+    "purpose": "Pachamirtham",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["300ml"]
+  },
+  {
+    "product_code": "RGR-006-2",
+    "display_order": 18,
+    "purpose": "Pachamirtham",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["150ml"]
+  },
+  {
+    "product_code": "RGR-008",
+    "display_order": 19,
+    "purpose": "Panner Bottle",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["40ml"]
+  },
+  {
+    "product_code": "RGR-009",
+    "display_order": 20,
+    "purpose": "Doop Cone",
+    "colours": ["Red"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"]
+  },
+  {
+    "product_code": "RGR-011",
+    "display_order": 21,
+    "purpose": "20L Oil Tin Lid",
+    "colours": ["Red", "Green"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"]
   }
 ]
