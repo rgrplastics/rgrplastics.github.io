@@ -1,6 +1,6 @@
 [
   {
-    "product_code": "RGR-A010",
+    "product_code": "RGR-010",
     "display_order": 1,
     "purpose": "Oil Containers",
     "colours": ["White"],
@@ -9,7 +9,7 @@
     "size": ["100ml", "200ml", "500ml", "1000ml"]
   },
   {
-    "product_code": "RGR-A002",
+    "product_code": "RGR-002",
     "display_order": 2,
     "purpose": "Acid Bottle",
     "colours": ["White"],
@@ -18,7 +18,7 @@
     "size": ["500ml", "1000ml"]
   },
   {
-    "product_code": "RGR-A001",
+    "product_code": "RGR-001",
     "display_order": 3,
     "purpose": "Sunnambu/Hydrated lime",
     "colours": ["White"],
@@ -27,7 +27,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A003",
+    "product_code": "RGR-003",
     "display_order": 4,
     "purpose": "Pain Balm",
     "colours": ["Half White"],
@@ -36,7 +36,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-1",
+    "product_code": "RGR-004-1",
     "display_order": 5,
     "purpose": "Camphor Small",
     "colours": ["Green", "Blue", "Yellow"],
@@ -45,7 +45,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-2",
+    "product_code": "RGR-004-2",
     "display_order": 6,
     "purpose": "Camphor Medium",
     "colours": ["White"],
@@ -54,7 +54,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A005-2",
+    "product_code": "RGR-005-2",
     "display_order": 7,
     "purpose": "Camphor - No.1 / Specimen Container",
     "colours": ["White"],
@@ -63,7 +63,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-6",
+    "product_code": "RGR-004-6",
     "display_order": 8,
     "purpose": "Camphor - No.1",
     "colours": ["Green", "Blue", "Yellow"],
@@ -72,7 +72,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-7",
+    "product_code": "RGR-004-7",
     "display_order": 9,
     "purpose": "Camphor-6",
     "colours": ["Half White"],
@@ -81,7 +81,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-3",
+    "product_code": "RGR-004-3",
     "display_order": 10,
     "purpose": "Camphor-3",
     "colours": ["Green", "Blue", "Yellow"],
@@ -90,7 +90,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A005-1",
+    "product_code": "RGR-005-1",
     "display_order": 11,
     "purpose": "Camphor / Sandal Powder (A Grade) / Carrom Powder",
     "colours": ["White"],
@@ -99,7 +99,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-4",
+    "product_code": "RGR-004-4",
     "display_order": 12,
     "purpose": "Camphor Medium",
     "colours": ["Green", "Blue", "Yellow"],
@@ -108,7 +108,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-5",
+    "product_code": "RGR-004-5",
     "display_order": 13,
     "purpose": "Camphor XL",
     "colours": ["Green", "Blue", "Yellow"],
@@ -117,7 +117,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A004-8",
+    "product_code": "RGR-004-8",
     "display_order": 14,
     "purpose": "Camphor 250G",
     "colours": ["White"],
@@ -126,7 +126,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A005-3",
+    "product_code": "RGR-005-3",
     "display_order": 15,
     "purpose": "Sandal Tablets",
     "colours": ["Green", "Blue", "Yellow"],
@@ -135,7 +135,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A005-4",
+    "product_code": "RGR-005-4",
     "display_order": 16,
     "purpose": "Sandal Powder",
     "colours": ["Transparent"],
@@ -144,7 +144,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A006-1",
+    "product_code": "RGR-006-1",
     "display_order": 17,
     "purpose": "Pachamirtham",
     "colours": ["Half White"],
@@ -153,7 +153,7 @@
     "size": ["300ml"]
   },
   {
-    "product_code": "RGR-A006-2",
+    "product_code": "RGR-006-2",
     "display_order": 18,
     "purpose": "Pachamirtham",
     "colours": ["Half White"],
@@ -162,7 +162,7 @@
     "size": ["150ml"]
   },
   {
-    "product_code": "RGR-A008",
+    "product_code": "RGR-008",
     "display_order": 19,
     "purpose": "Panner Bottle",
     "colours": ["White"],
@@ -171,7 +171,7 @@
     "size": ["40ml"]
   },
   {
-    "product_code": "RGR-A009",
+    "product_code": "RGR-009",
     "display_order": 20,
     "purpose": "Doop Cone",
     "colours": ["Red"],
@@ -180,7 +180,7 @@
     "size": ["Standard"]
   },
   {
-    "product_code": "RGR-A011",
+    "product_code": "RGR-011",
     "display_order": 21,
     "purpose": "20L Oil Tin Lid",
     "colours": ["Red", "Green"],
