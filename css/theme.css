@@ -5,9 +5,28 @@
   --rgr-ink: #17324d;
 }
 
+html,
+body {
+  max-width: 100%;
+}
+
+html {
+  overflow-x: clip;
+}
+
+.navbar.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
 body {
   color: var(--rgr-ink);
   font-family: "DM Sans", sans-serif;
+}
+
+p {
+  text-align: justify;
 }
 
 h1,
@@ -176,6 +195,8 @@ section {
 
 .product-card {
   border-bottom: 1px solid rgba(13, 71, 120, 0.18);
+  min-width: 0;
+  overflow-wrap: anywhere;
   padding: 1rem;
   transition: background-color 180ms ease, transform 180ms ease;
 }
@@ -190,6 +211,11 @@ section {
 .product-quote-form .form-select:focus {
   border-color: var(--rgr-navy);
   box-shadow: 0 0 0 0.2rem rgba(13, 71, 120, 0.12);
+}
+
+.quote-quantity::placeholder {
+  color: #adb5bd;
+  opacity: 1;
 }
 
 .product-card:hover {
@@ -215,6 +241,52 @@ section {
 .product-code {
   color: var(--rgr-red);
   letter-spacing: 0.04em;
+}
+
+.cart-float {
+  align-items: center;
+  border-radius: 50%;
+  bottom: 1.25rem;
+  display: flex;
+  height: 3.5rem;
+  justify-content: center;
+  padding: 0;
+  position: fixed !important;
+  right: 1.25rem;
+  width: 3.5rem;
+  z-index: 1080;
+}
+
+.cart-count {
+  background-color: var(--rgr-red);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  min-width: 1.35rem;
+  padding: 0.15rem;
+  position: absolute;
+  right: -0.35rem;
+  top: -0.35rem;
+}
+
+.cart-item h3 {
+  color: var(--rgr-ink);
+}
+
+.cart-item-image {
+  border: 2px solid rgba(13, 71, 120, 0.12);
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.app-toast-container {
+  max-width: calc(100% - 1.5rem);
+  z-index: 1090;
+  width: 24rem;
+}
+
+.app-toast-container .toast {
+  max-width: 100%;
 }
 
 .material-codes {
@@ -304,6 +376,10 @@ footer {
     padding-right: 0.25rem;
   }
 
+  .vcard-profile {
+    overflow: hidden;
+  }
+
   .product-card-image {
     height: 88px;
     width: 88px;
@@ -320,6 +396,19 @@ footer {
 
   .product-card h3 {
     font-size: 1rem;
+  }
+
+  .cart-float {
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    display: flex !important;
+    height: 3.75rem;
+    right: 1rem;
+    width: 3.75rem;
+  }
+
+  .app-toast-container {
+    max-width: none;
+    width: calc(100% - 1rem);
   }
 
   .material-code-symbol {
