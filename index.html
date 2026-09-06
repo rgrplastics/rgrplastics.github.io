@@ -473,7 +473,7 @@
                     const material = escapeHtml(product.material);
                     const grade = escapeHtml(product.grade);
                     const imageAlt = escapeHtml(`${product.product_code} ${product.purpose || 'plastic container'} ${product.size?.[0] || 'standard size'} ${product.grade || ''} product image`);
-                    grid.insertAdjacentHTML('beforeend', `<div class="col"><article class="product-card h-100" data-product-code="${code}" data-product-purpose="${purpose}" data-product-material="${material}" data-product-grade="${grade}"><div class="d-flex align-items-center gap-3"><img src="img/products/${code.toLowerCase()}.png" onerror="this.onerror=null;this.src='img/products/container.jpg';" class="product-card-image product-image-trigger flex-shrink-0" alt="${imageAlt}" width="112" height="112" loading="lazy" role="button" tabindex="0" aria-label="View larger image of ${purpose}"><div class="flex-grow-1"><div class="d-flex align-items-center gap-2"><h3 class="h5 mb-0">${purpose}</h3></div><p class="small text-secondary mb-1">${material} material - ${grade} grade</p><span class="product-code small fw-bold">${code}</span></div></div><div class="row g-2 product-quote-form"><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="colour-${code}">Colour</label><select id="colour-${code}" class="form-select form-select-sm quote-colour">${colours}</select></div><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="size-${code}">Size</label><select id="size-${code}" class="form-select form-select-sm quote-size">${sizes}</select></div><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="quantity-${code}">Quantity</label><input id="quantity-${code}" class="form-control form-control-sm quote-quantity" type="number" min="100" step="100" placeholder="100" inputmode="numeric"></div><div class="col-6 col-md-3 d-flex align-items-end"><button type="button" class="btn btn-outline-primary btn-sm w-100 add-to-cart"><i class="fa-solid fa-cart-plus me-2" aria-hidden="true"></i>Add to cart</button></div></div></article></div>`);
+                    grid.insertAdjacentHTML('beforeend', `<div class="col"><article class="product-card h-100" data-product-code="${code}" data-product-purpose="${purpose}" data-product-material="${material}" data-product-grade="${grade}"><div class="d-flex align-items-center gap-3"><img src="img/products/${code.toLowerCase()}.png" onerror="this.onerror=null;this.src='img/products/container.jpg';" class="product-card-image product-image-trigger flex-shrink-0" alt="${imageAlt}" width="112" height="112" loading="lazy" role="button" tabindex="0" aria-label="View larger image of ${purpose}"><div class="flex-grow-1"><div class="d-flex align-items-center gap-2"><h3 class="h5 mb-0">${purpose}</h3></div><p class="small text-secondary mb-1">${material} material - ${grade} grade</p><span class="product-code small fw-bold">${code}</span></div></div><div class="row g-2 product-quote-form"><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="colour-${code}">Colour</label><select id="colour-${code}" class="form-select form-select-sm quote-colour">${colours}</select></div><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="size-${code}">Size</label><select id="size-${code}" class="form-select form-select-sm quote-size">${sizes}</select></div><div class="col-6 col-md-3"><label class="form-label small fw-semibold" for="quantity-${code}">Quantity</label><input id="quantity-${code}" class="form-control form-control-sm quote-quantity" type="number" min="100" step="100" placeholder="100" inputmode="numeric"></div><div class="col-6 col-md-3 d-flex align-items-end"><button type="button" class="btn btn-outline-primary btn-sm w-100 add-to-cart"><i class="fa-solid fa-cart-plus me-2" aria-hidden="true"></i>Add to cart</button></div><div class="col-12"><div class="product-quote-error text-danger small mt-2 d-none" role="alert"></div></div></div></article></div>`);
                 });
                 const productSchema = document.createElement('script');
                 productSchema.type = 'application/ld+json';
@@ -534,10 +534,15 @@
                 const quantityField = card.querySelector('.quote-quantity');
                 const quantity = Number(quantityField.value);
                 if (!Number.isInteger(quantity) || quantity < 100 || quantity % 100 !== 0) {
+                    const errorCallout = card.querySelector('.product-quote-error');
+                    errorCallout.textContent = 'Please enter a quantity in multiples of 100, such as 100, 200, or 500.';
+                    errorCallout.classList.remove('d-none');
                     quantityField.focus();
-                    showToast('Please enter a quantity in multiples of 100, such as 100, 200, or 500.');
                     return;
                 }
+                const errorCallout = card.querySelector('.product-quote-error');
+                errorCallout.textContent = '';
+                errorCallout.classList.add('d-none');
                 const item = {
                     code: card.dataset.productCode,
                     purpose: card.dataset.productPurpose,
@@ -563,6 +568,13 @@
                 saveCart();
                 renderCart();
             }
+        });
+
+        document.addEventListener('input', event => {
+            if (!event.target.matches('.quote-quantity')) return;
+            const errorCallout = event.target.closest('.product-card').querySelector('.product-quote-error');
+            errorCallout.textContent = '';
+            errorCallout.classList.add('d-none');
         });
 
         document.getElementById('request-quote').addEventListener('click', () => {

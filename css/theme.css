@@ -227,6 +227,16 @@ section {
   opacity: 1;
 }
 
+.product-quote-error {
+  background-color: rgba(237, 27, 47, 0.08);
+  border: 1px solid rgba(237, 27, 47, 0.3);
+  border-left: 4px solid var(--rgr-red);
+  border-radius: 0.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 0.5rem 0.65rem;
+}
+
 .product-card:hover {
   background-color: #fff;
   transform: translateY(-0.15rem);
