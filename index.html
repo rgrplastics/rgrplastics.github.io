@@ -517,6 +517,13 @@
 
         const saveCart = () => localStorage.setItem(cartStorageKey, JSON.stringify(cart));
 
+        const clearProductError = errorCallout => {
+            if (errorCallout.errorTimeout) window.clearTimeout(errorCallout.errorTimeout);
+            errorCallout.textContent = '';
+            errorCallout.classList.add('d-none');
+            errorCallout.errorTimeout = null;
+        };
+
         const renderCart = () => {
             cartCount.textContent = cart.length;
             cartCount.classList.toggle('d-none', !cart.length);
@@ -535,14 +542,15 @@
                 const quantity = Number(quantityField.value);
                 if (!Number.isInteger(quantity) || quantity < 100 || quantity % 100 !== 0) {
                     const errorCallout = card.querySelector('.product-quote-error');
+                    clearProductError(errorCallout);
                     errorCallout.textContent = 'Please enter a quantity in multiples of 100, such as 100, 200, or 500.';
                     errorCallout.classList.remove('d-none');
+                    errorCallout.errorTimeout = window.setTimeout(() => clearProductError(errorCallout), 5000);
                     quantityField.focus();
                     return;
                 }
                 const errorCallout = card.querySelector('.product-quote-error');
-                errorCallout.textContent = '';
-                errorCallout.classList.add('d-none');
+                clearProductError(errorCallout);
                 const item = {
                     code: card.dataset.productCode,
                     purpose: card.dataset.productPurpose,
@@ -573,8 +581,7 @@
         document.addEventListener('input', event => {
             if (!event.target.matches('.quote-quantity')) return;
             const errorCallout = event.target.closest('.product-card').querySelector('.product-quote-error');
-            errorCallout.textContent = '';
-            errorCallout.classList.add('d-none');
+            clearProductError(errorCallout);
         });
 
         document.getElementById('request-quote').addEventListener('click', () => {
