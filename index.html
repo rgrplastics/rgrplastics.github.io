@@ -272,8 +272,9 @@
                     </div>
                 </div>
                 <div id="product-grid" class="row row-cols-1 row-cols-lg-2 g-4" aria-label="Product catalogue"></div>
-                <p class="small text-secondary text-center mt-5 mb-0">Add products to your cart to prepare a quote on
-                    WhatsApp.</p>
+                <p class="product-quote-note small text-center mt-5 mb-0" role="note"><i
+                        class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>Add products to your cart to
+                    prepare a quote on WhatsApp.</p>
             </div>
         </section>
 
@@ -453,6 +454,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
+            target: '#site-navigation',
+            rootMargin: '0px 0px -35%'
+        });
+
         const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({
             '&': '&amp;',
             '<': '&lt;',

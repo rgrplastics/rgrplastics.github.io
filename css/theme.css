@@ -70,8 +70,13 @@ h6,
 }
 
 .navbar .nav-link:hover,
-.navbar .nav-link:focus {
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
   color: var(--rgr-red);
+}
+
+.navbar .nav-link.active {
+  font-weight: 700;
 }
 
 .btn-primary {
@@ -235,6 +240,22 @@ section {
   font-weight: 600;
   line-height: 1.35;
   padding: 0.5rem 0.65rem;
+}
+
+.product-quote-note {
+  background-color: rgba(13, 71, 120, 0.06);
+  border: 1px solid rgba(13, 71, 120, 0.18);
+  border-left: 4px solid var(--rgr-navy);
+  border-radius: 0.35rem;
+  color: var(--rgr-ink);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 36rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.product-quote-note i {
+  color: var(--rgr-navy);
 }
 
 .product-card:hover {
