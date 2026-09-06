@@ -117,7 +117,9 @@ section {
 
 #about .card {
   border-top: 3px solid var(--rgr-red);
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 #about .card:hover {
@@ -131,7 +133,12 @@ section {
 }
 
 .vcard-profile {
-  background: linear-gradient(145deg, var(--rgr-navy-dark), var(--rgr-navy) 62%, var(--rgr-red));
+  background: linear-gradient(
+    145deg,
+    var(--rgr-navy-dark),
+    var(--rgr-navy) 62%,
+    var(--rgr-red)
+  );
   min-height: 24rem;
   position: relative;
 }
@@ -198,7 +205,9 @@ section {
   min-width: 0;
   overflow-wrap: anywhere;
   padding: 1rem;
-  transition: background-color 180ms ease, transform 180ms ease;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .product-quote-form {
@@ -228,12 +237,18 @@ section {
   border-radius: 50%;
   cursor: zoom-in;
   object-fit: cover;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+  /* transition: transform 180ms ease, box-shadow 180ms ease; */
 }
 
 .product-card-image:hover,
 .product-card-image:focus-visible {
-  box-shadow: 0 0.5rem 1rem rgba(13, 71, 120, 0.2);
+  border-color: color-mix(in srgb, var(--rgr-navy-dark) 20%, transparent);
+  box-shadow: 0 0 0.5rem 0.5rem
+    color-mix(in srgb, var(--rgr-navy-dark) 20%, transparent);
   outline: none;
   transform: scale(1.08);
 }

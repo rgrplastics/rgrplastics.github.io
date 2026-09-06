@@ -38,7 +38,7 @@
   {
     "product_code": "RGR-004-1",
     "display_order": 5,
-    "purpose": "Camphor Small",
+    "purpose": "Camphor - No.2",
     "colours": ["Green", "Blue", "Yellow"],
     "material": "Reprocessed",
     "grade": "HDPE",
@@ -47,7 +47,7 @@
   {
     "product_code": "RGR-004-2",
     "display_order": 6,
-    "purpose": "Camphor Medium",
+    "purpose": "Camphor Thick",
     "colours": ["White"],
     "material": "Virgin",
     "grade": "HDPE",
@@ -74,7 +74,7 @@
   {
     "product_code": "RGR-004-7",
     "display_order": 9,
-    "purpose": "Camphor-6",
+    "purpose": "Camphor - No.3",
     "colours": ["Half White"],
     "material": "Virgin",
     "grade": "HDPE",
@@ -83,7 +83,7 @@
   {
     "product_code": "RGR-004-3",
     "display_order": 10,
-    "purpose": "Camphor-3",
+    "purpose": "Camphor - No.3",
     "colours": ["Green", "Blue", "Yellow"],
     "material": "Reprocessed",
     "grade": "HDPE",
@@ -92,7 +92,7 @@
   {
     "product_code": "RGR-005-1",
     "display_order": 11,
-    "purpose": "Camphor / Sandal Powder (A Grade) / Carrom Powder",
+    "purpose": "Camphor Medium / Sandal Powder (A Grade) / Carrom Powder",
     "colours": ["White"],
     "material": "Virgin",
     "grade": "HDPE",
@@ -110,7 +110,7 @@
   {
     "product_code": "RGR-004-5",
     "display_order": 13,
-    "purpose": "Camphor XL",
+    "purpose": "Camphor Large / Sandal Tablets / Sandal Powder",
     "colours": ["Green", "Blue", "Yellow"],
     "material": "Reprocessed ",
     "grade": "HDPE",
@@ -119,11 +119,11 @@
   {
     "product_code": "RGR-004-8",
     "display_order": 14,
-    "purpose": "Camphor 250G",
+    "purpose": "Camphor XL / Panchamirtham",
     "colours": ["White"],
     "material": "Virgin",
     "grade": "HDPE",
-    "size": ["Standard"]
+    "size": ["250ml"]
   },
   {
     "product_code": "RGR-005-3",
@@ -132,16 +132,16 @@
     "colours": ["Green", "Blue", "Yellow"],
     "material": "Reprocessed ",
     "grade": "HDPE",
-    "size": ["Standard"]
+    "size": ["250ml"]
   },
   {
     "product_code": "RGR-005-4",
     "display_order": 16,
-    "purpose": "Sandal Powder",
+    "purpose": "Sandal Powder / Panchamirtham",
     "colours": ["Transparent"],
     "material": "Virgin",
     "grade": "PP",
-    "size": ["Standard"]
+    "size": ["150ml"]
   },
   {
     "product_code": "RGR-006-1",
