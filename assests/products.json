@@ -123,7 +123,7 @@
     "colours": ["White"],
     "material": "Virgin",
     "grade": "HDPE",
-    "size": ["250ml"]
+    "size": ["200ml"]
   },
   {
     "product_code": "RGR-005-3",
@@ -132,7 +132,7 @@
     "colours": ["Green", "Blue", "Yellow"],
     "material": "Reprocessed ",
     "grade": "HDPE",
-    "size": ["250ml"]
+    "size": ["150ml"]
   },
   {
     "product_code": "RGR-005-4",
@@ -141,7 +141,7 @@
     "colours": ["Transparent"],
     "material": "Virgin",
     "grade": "PP",
-    "size": ["150ml"]
+    "size": ["100ml"]
   },
   {
     "product_code": "RGR-006-1",
