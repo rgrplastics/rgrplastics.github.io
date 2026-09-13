@@ -79,6 +79,17 @@ h6,
   font-weight: 700;
 }
 
+.whatsapp-nav-link {
+  color: #25d366;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.whatsapp-nav-link:hover,
+.whatsapp-nav-link:focus {
+  color: #128c7e;
+}
+
 .btn-primary {
   --bs-btn-bg: var(--rgr-navy);
   --bs-btn-border-color: var(--rgr-navy);
