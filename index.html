@@ -909,13 +909,13 @@
                 enquiryFormAlert.textContent = 'Please provide at least your WhatsApp number or email ID.';
                 enquiryFormAlert.classList.remove('d-none');
             }
-const recaptchaToken = '';
-            // const recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : '';
-            // const captchaOk = recaptchaToken.length > 0;
-            // enquiryCaptchaFeedback.classList.toggle('d-none', captchaOk);
-            // if (!captchaOk) valid = false;
+// const recaptchaToken = '';
+            const recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : '';
+            const captchaOk = recaptchaToken.length > 0;
+            enquiryCaptchaFeedback.classList.toggle('d-none', captchaOk);
+            if (!captchaOk) valid = false;
 
-            // if (!valid) return;
+            if (!valid) return;
 
             const contact = { companyName, firstName, lastName, designation, address, mobile, whatsapp, email };
             const enquiryId = generateEnquiryId();
