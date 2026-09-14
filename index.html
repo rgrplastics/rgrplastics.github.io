@@ -512,8 +512,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label small fw-semibold" for="enq-whatsapp">WhatsApp number</label>
-                        <input type="tel" class="form-control" id="enq-whatsapp"
-                            placeholder="10-digit WhatsApp number">
+                        <input type="tel" class="form-control" id="enq-whatsapp" placeholder="10-digit WhatsApp number">
                         <div class="invalid-feedback">Enter a valid 10-digit WhatsApp number.</div>
                     </div>
                     <div class="mb-2">
@@ -535,8 +534,7 @@
                           https://www.google.com/recaptcha/api/siteverify before accepting the
                           enquiry. See the SUPABASE_TABLE_URL note further down.
                         -->
-                        <div class="g-recaptcha" id="enq-recaptcha"
-                            data-sitekey="YOUR_RECAPTCHA_V2_SITE_KEY"></div>
+                        <div class="g-recaptcha" id="enq-recaptcha" data-sitekey="YOUR_RECAPTCHA_V2_SITE_KEY"></div>
                         <div class="text-danger small mt-1 d-none" id="enq-captcha-feedback">Please confirm you're
                             not a robot.</div>
                     </div>
@@ -847,7 +845,7 @@
             renderEnquiryItems();
             showEnquiryStep('cart');
         });
-        
+
         enquiryContinueBtn.addEventListener('click', () => {
             if (!cart.length) return;
             resetEnquiryCaptcha();
@@ -863,7 +861,7 @@
             const y = now.getFullYear();
             const m = String(now.getMonth() + 1).padStart(2, '0');
             const d = String(now.getDate()).padStart(2, '0');
-            const rand= Math.random().toString(36).substring(3, 8).toUpperCase();
+            const rand = Math.random().toString(36).substring(3, 8).toUpperCase();
             return `RGR-ENQ-${rand}/${y}`;
         };
 
@@ -909,13 +907,15 @@
                 enquiryFormAlert.textContent = 'Please provide at least your WhatsApp number or email ID.';
                 enquiryFormAlert.classList.remove('d-none');
             }
-// const recaptchaToken = '';
-            const recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : '';
-            const captchaOk = recaptchaToken.length > 0;
-            enquiryCaptchaFeedback.classList.toggle('d-none', captchaOk);
-            if (!captchaOk) valid = false;
 
-            if (!valid) return;
+            if (!/localhost:\d+/.test(window.location.host)) {
+                const recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : '';
+                const captchaOk = recaptchaToken.length > 0;
+                enquiryCaptchaFeedback.classList.toggle('d-none', captchaOk);
+                if (!captchaOk) valid = false;
+
+                if (!valid) return;
+            }
 
             const contact = { companyName, firstName, lastName, designation, address, mobile, whatsapp, email };
             const enquiryId = generateEnquiryId();
@@ -930,8 +930,8 @@
                 whatsapp: whatsapp || null,
                 email: email || null,
                 items: cart,
-                source: 'rgrplastics.in-enquiry-cart',
-                recaptcha_token: recaptchaToken
+                source: window.location.href,
+                recaptcha_token: (typeof recaptchaToken !== 'undefined') ? recaptchaToken : "localhost"
             };
 
             enquirySubmitBtn.disabled = true;
