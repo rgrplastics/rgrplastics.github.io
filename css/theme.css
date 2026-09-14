@@ -326,6 +326,20 @@ section {
   top: -0.35rem;
 }
 
+.cart-float-start {
+  left: 1.25rem;
+  right: auto;
+}
+
+.enquiry-float {
+  --bs-btn-bg: var(--rgr-red);
+  --bs-btn-border-color: var(--rgr-red);
+  --bs-btn-hover-bg: #c3101f;
+  --bs-btn-hover-border-color: #c3101f;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+}
+
 .cart-item h3 {
   color: var(--rgr-ink);
 }
@@ -461,6 +475,11 @@ footer {
     height: 3.75rem;
     right: 1rem;
     width: 3.75rem;
+  }
+
+  .cart-float-start {
+    left: 1rem;
+    right: auto;
   }
 
   .app-toast-container {

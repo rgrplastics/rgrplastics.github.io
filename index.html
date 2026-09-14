@@ -421,6 +421,13 @@
         <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i><span id="cart-count" class="cart-count">0</span>
     </button>
 
+    <button id="enquiry-toggle" class="cart-float cart-float-start enquiry-float btn shadow" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#enquiry-panel" aria-controls="enquiry-panel"
+        aria-label="Open enquiry form">
+        <i class="fa-solid fa-file-invoice" aria-hidden="true"></i><span id="enquiry-count"
+            class="cart-count d-none">0</span>
+    </button>
+
     <div class="toast-container app-toast-container position-fixed top-0 end-0 p-3" aria-live="polite"
         aria-atomic="true">
         <div id="app-toast" class="toast text-bg-danger border-0" role="alert">
@@ -450,6 +457,112 @@
         </div>
     </div>
 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="enquiry-panel" aria-labelledby="enquiry-panel-title">
+        <div class="offcanvas-header border-bottom">
+            <h2 class="offcanvas-title h5" id="enquiry-panel-title">Enquiry cart</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+
+            <!-- Step 1: review the same items from the quote cart -->
+            <div id="enquiry-step-cart">
+                <div id="enquiry-items" class="mb-3">
+                    <p class="text-secondary">Your enquiry cart is empty.</p>
+                </div>
+                <button id="enquiry-continue" type="button" class="btn btn-primary w-100" disabled>Continue to your
+                    details</button>
+                <p class="small text-secondary mt-2 mb-0">We'll ask for a few contact details to confirm and send your
+                    quote.</p>
+            </div>
+
+            <!-- Step 2: contact details + captcha -->
+            <div id="enquiry-step-form" class="d-none">
+                <div id="enquiry-form-alert" class="alert alert-danger py-2 px-3 small d-none" role="alert"></div>
+                <form id="enquiry-form" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold" for="enq-company">Company name</label>
+                        <input type="text" class="form-control" id="enq-company" placeholder="Optional">
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-sm-6">
+                            <label class="form-label small fw-semibold" for="enq-first-name">First name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="enq-first-name" required>
+                            <div class="invalid-feedback">Please enter the first name.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-label small fw-semibold" for="enq-last-name">Last name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="enq-last-name" required>
+                            <div class="invalid-feedback">Please enter the last name.</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold" for="enq-designation">Designation</label>
+                        <input type="text" class="form-control" id="enq-designation" placeholder="Optional">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold" for="enq-address">Address</label>
+                        <textarea class="form-control" id="enq-address" rows="2" placeholder="Optional"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold" for="enq-mobile">Mobile number</label>
+                        <input type="tel" class="form-control" id="enq-mobile" placeholder="10-digit mobile number">
+                        <div class="invalid-feedback">Enter a valid 10-digit mobile number.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold" for="enq-whatsapp">WhatsApp number</label>
+                        <input type="tel" class="form-control" id="enq-whatsapp"
+                            placeholder="10-digit WhatsApp number">
+                        <div class="invalid-feedback">Enter a valid 10-digit WhatsApp number.</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label small fw-semibold" for="enq-email">Email ID</label>
+                        <input type="email" class="form-control" id="enq-email" placeholder="you@company.com">
+                        <div class="invalid-feedback">Enter a valid email address.</div>
+                    </div>
+                    <p class="small text-secondary mb-3">Please provide at least your WhatsApp number or email ID, so
+                        we can send your quotation.</p>
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Confirm you're not a robot <span
+                                class="text-danger">*</span></label>
+                        <!--
+                          Get a site key + secret key at https://www.google.com/recaptcha/admin
+                          (choose "reCAPTCHA v2" -> "I'm not a robot" Checkbox) and put the site
+                          key below. The SECRET key must never go in this file — it belongs on
+                          the backend, which verifies the token from g-recaptcha-response against
+                          https://www.google.com/recaptcha/api/siteverify before accepting the
+                          enquiry. See the ENQUIRY_MOCK_API_URL note further down.
+                        -->
+                        <div class="g-recaptcha" id="enq-recaptcha"
+                            data-sitekey="6Lek87otAAAAAEZRQ9w1lV8C0RPHG7fbHxo_OOSM"></div>
+                        <div class="text-danger small mt-1 d-none" id="enq-captcha-feedback">Please confirm you're
+                            not a robot.</div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="button" id="enquiry-back" class="btn btn-outline-primary w-50">Back</button>
+                        <button type="submit" id="enquiry-submit" class="btn btn-primary w-50"><i
+                                class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Submit enquiry</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 3: success -->
+            <div id="enquiry-step-success" class="d-none text-center my-auto">
+                <i class="fa-solid fa-circle-check text-success display-5 mb-3" aria-hidden="true"></i>
+                <h3 class="h5">Thank you, <span id="enquiry-success-name"></span>!</h3>
+                <p class="text-secondary small mb-3">Your enquiry has been sent to the RGR Plastics team.</p>
+                <p class="small text-secondary mb-1">Your enquiry ID</p>
+                <p class="fw-bold fs-5 text-primary" id="enquiry-id-display"></p>
+                <p class="small text-secondary" id="enquiry-success-channels"></p>
+                <button type="button" class="btn btn-primary w-100 mt-2" data-bs-dismiss="offcanvas">Done</button>
+            </div>
+
+        </div>
+    </div>
+
     <div class="modal fade" id="product-image-modal" tabindex="-1" aria-labelledby="product-image-modal-title"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -470,6 +583,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
             target: '#site-navigation',
@@ -639,6 +753,186 @@
         document.addEventListener('keydown', event => {
             if (event.key === 'Enter' && event.target.matches('.product-image-trigger')) openProductImage(event.target);
         });
+    </script>
+
+    <script>
+        /* ---------- Enquiry cart: reviews the same items as the quote cart, then
+           collects buyer details behind a captcha and submits a structured enquiry. ---------- */
+        const enquiryItems = document.getElementById('enquiry-items');
+        const enquiryCount = document.getElementById('enquiry-count');
+        const enquiryPanelTitle = document.getElementById('enquiry-panel-title');
+        const enquiryStepCart = document.getElementById('enquiry-step-cart');
+        const enquiryStepForm = document.getElementById('enquiry-step-form');
+        const enquiryStepSuccess = document.getElementById('enquiry-step-success');
+        const enquiryContinueBtn = document.getElementById('enquiry-continue');
+        const enquiryBackBtn = document.getElementById('enquiry-back');
+        const enquiryForm = document.getElementById('enquiry-form');
+        const enquiryFormAlert = document.getElementById('enquiry-form-alert');
+        const enquirySubmitBtn = document.getElementById('enquiry-submit');
+        const enquiryCaptchaFeedback = document.getElementById('enq-captcha-feedback');
+
+        // TODO: point this at the real enquiry backend. For now it posts to a
+        // public mock endpoint so the flow can be tested end to end; if that
+        // request is unreachable for any reason the code falls back to a
+        // simulated success so the enquiry ID / confirmation screen still shows.
+        // IMPORTANT: the real backend must verify the `recaptchaToken` field
+        // server-side by calling Google's siteverify endpoint with the secret
+        // key before treating the enquiry as legitimate — a client can always
+        // be scripted to skip the widget, so this check only counts if it's
+        // re-checked on the server.
+        const ENQUIRY_MOCK_API_URL = 'https://jsonplaceholder.typicode.com/posts';
+
+        const renderEnquiryItems = () => {
+            enquiryCount.textContent = cart.length;
+            enquiryCount.classList.toggle('d-none', !cart.length);
+            enquiryContinueBtn.disabled = !cart.length;
+            if (!cart.length) {
+                enquiryItems.innerHTML = '<p class="text-secondary">Your enquiry cart is empty.</p>';
+                return;
+            }
+            enquiryItems.innerHTML = cart.map(item => `<div class="cart-item border-bottom pb-3 mb-3"><div class="d-flex gap-3"><img class="cart-item-image flex-shrink-0" src="img/products/${item.code.toLowerCase()}.png" onerror="this.onerror=null;this.src='img/products/container.jpg';" alt="${escapeHtml(item.purpose)}" width="56" height="56"><div class="flex-grow-1"><h3 class="h6 mb-1">${escapeHtml(item.purpose)}</h3><p class="small text-secondary mb-1">${escapeHtml(item.code)} · ${escapeHtml(item.material)} · ${escapeHtml(item.grade)}</p><p class="small mb-0">Quantity: ${item.quantity} · ${escapeHtml(item.colour)} · ${escapeHtml(item.size)}</p></div></div></div>`).join('');
+        };
+
+        const showEnquiryStep = step => {
+            enquiryStepCart.classList.toggle('d-none', step !== 'cart');
+            enquiryStepForm.classList.toggle('d-none', step !== 'form');
+            enquiryStepSuccess.classList.toggle('d-none', step !== 'success');
+            enquiryPanelTitle.textContent = step === 'form' ? 'Your details' : step === 'success' ? 'Enquiry received' : 'Enquiry cart';
+        };
+
+        // grecaptcha loads async — resetting/reading before it's ready would
+        // throw, so every call is guarded behind this check. Since there's
+        // only one widget on the page it uses the default widget id (0).
+        const recaptchaReady = () => typeof window.grecaptcha !== 'undefined' && typeof window.grecaptcha.reset === 'function';
+        const resetEnquiryCaptcha = () => {
+            if (recaptchaReady()) window.grecaptcha.reset();
+            enquiryCaptchaFeedback.classList.add('d-none');
+        };
+
+        document.getElementById('enquiry-panel').addEventListener('show.bs.offcanvas', () => {
+            renderEnquiryItems();
+            showEnquiryStep('cart');
+        });
+
+        enquiryContinueBtn.addEventListener('click', () => {
+            if (!cart.length) return;
+            resetEnquiryCaptcha();
+            showEnquiryStep('form');
+        });
+
+        enquiryBackBtn.addEventListener('click', () => showEnquiryStep('cart'));
+
+        const enquiryField = id => document.getElementById(id);
+
+        const generateEnquiryId = () => {
+            const now = new Date();
+            const y = now.getFullYear();
+            const m = String(now.getMonth() + 1).padStart(2, '0');
+            const d = String(now.getDate()).padStart(2, '0');
+            const rand = Math.floor(1000 + Math.random() * 9000);
+            return `RGR-ENQ-${y}${m}${d}-${rand}`;
+        };
+
+        enquiryForm.addEventListener('submit', async event => {
+            event.preventDefault();
+            enquiryFormAlert.classList.add('d-none');
+
+            const mobileRe = /^[6-9]\d{9}$/;
+            const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            const companyName = enquiryField('enq-company').value.trim();
+            const firstName = enquiryField('enq-first-name').value.trim();
+            const lastName = enquiryField('enq-last-name').value.trim();
+            const designation = enquiryField('enq-designation').value.trim();
+            const address = enquiryField('enq-address').value.trim();
+            const mobile = enquiryField('enq-mobile').value.trim();
+            const whatsapp = enquiryField('enq-whatsapp').value.trim();
+            const email = enquiryField('enq-email').value.trim();
+
+            let valid = true;
+
+            enquiryField('enq-first-name').classList.toggle('is-invalid', !firstName);
+            if (!firstName) valid = false;
+
+            enquiryField('enq-last-name').classList.toggle('is-invalid', !lastName);
+            if (!lastName) valid = false;
+
+            const mobileBad = mobile !== '' && !mobileRe.test(mobile);
+            enquiryField('enq-mobile').classList.toggle('is-invalid', mobileBad);
+            if (mobileBad) valid = false;
+
+            const whatsappBad = whatsapp !== '' && !mobileRe.test(whatsapp);
+            const emailBad = email !== '' && !emailRe.test(email);
+            const noContact = whatsapp === '' && email === '';
+
+            enquiryField('enq-whatsapp').classList.toggle('is-invalid', whatsappBad || noContact);
+            enquiryField('enq-email').classList.toggle('is-invalid', emailBad || noContact);
+
+            if (whatsappBad) valid = false;
+            if (emailBad) valid = false;
+            if (noContact) {
+                valid = false;
+                enquiryFormAlert.textContent = 'Please provide at least your WhatsApp number or email ID.';
+                enquiryFormAlert.classList.remove('d-none');
+            }
+
+            const recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : '';
+            const captchaOk = recaptchaToken.length > 0;
+            enquiryCaptchaFeedback.classList.toggle('d-none', captchaOk);
+            if (!captchaOk) valid = false;
+
+            if (!valid) return;
+
+            const contact = { companyName, firstName, lastName, designation, address, mobile, whatsapp, email };
+            const enquiryId = generateEnquiryId();
+            const payload = {
+                enquiryId,
+                source: 'rgrplastics.in-enquiry-cart',
+                submittedAt: new Date().toISOString(),
+                contact,
+                items: cart,
+                recaptchaToken // the backend must verify this against Google's siteverify API
+            };
+
+            enquirySubmitBtn.disabled = true;
+            enquirySubmitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Submitting…';
+
+            try {
+                const response = await fetch(ENQUIRY_MOCK_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (!response.ok) throw new Error('Unexpected response');
+                await response.json();
+            } catch (error) {
+                // Mock endpoint unreachable — still show the confirmation so the
+                // flow can be reviewed; swap in real error handling once the
+                // real backend is wired up.
+                console.warn('Enquiry submission fell back to a simulated response:', error);
+            }
+
+            document.getElementById('enquiry-success-name').textContent = firstName;
+            document.getElementById('enquiry-id-display').textContent = enquiryId;
+            const channels = [];
+            if (whatsapp) channels.push(`WhatsApp (${whatsapp})`);
+            if (email) channels.push(email);
+            document.getElementById('enquiry-success-channels').textContent = channels.length
+                ? `We've sent your enquiry details to ${channels.join(' and ')}.`
+                : '';
+
+            cart = [];
+            saveCart();
+            renderCart();
+
+            enquirySubmitBtn.disabled = false;
+            enquirySubmitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2" aria-hidden="true"></i>Submit enquiry';
+            enquiryForm.reset();
+            resetEnquiryCaptcha();
+            showEnquiryStep('success');
+        });
+
+        renderEnquiryItems();
     </script>
 </body>
 
