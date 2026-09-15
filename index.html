@@ -534,7 +534,7 @@
                           https://www.google.com/recaptcha/api/siteverify before accepting the
                           enquiry. See the SUPABASE_TABLE_URL note further down.
                         -->
-                        <div class="g-recaptcha" id="enq-recaptcha" data-sitekey="6LfGDbstAAAAAH3qVI20rVVthN-SNFmB_BOTk03v"></div>
+                        <div class="g-recaptcha" id="enq-recaptcha"></div>
                         <div class="text-danger small mt-1 d-none" id="enq-captcha-feedback">Please confirm you're
                             not a robot.</div>
                     </div>
@@ -555,7 +555,7 @@
                 <p class="small text-secondary mb-1">Your enquiry ID</p>
                 <p class="fw-bold fs-5 text-primary" id="enquiry-id-display"></p>
                 <p class="small text-secondary" id="enquiry-success-channels"></p>
-                <button type="button" class="btn btn-primary w-100 mt-2" data-bs-dismiss="offcanvas">Done</button>
+                <button type="button" id="enquiry-done" class="btn btn-primary w-100 mt-2" data-bs-dismiss="offcanvas">Done</button>
             </div>
 
         </div>
@@ -581,6 +581,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="js/config.js"></script>
+    <script>
+        document.getElementById('enq-recaptcha').dataset.sitekey = RGR_CONFIG.recaptchaSiteKey;
+    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
@@ -700,6 +704,7 @@
                 else cart.push(item);
                 saveCart();
                 renderCart();
+                renderEnquiryItems();
                 addButton.innerHTML = '<i class="fa-solid fa-check me-2" aria-hidden="true"></i>Added to cart';
                 window.setTimeout(() => { addButton.innerHTML = '<i class="fa-solid fa-cart-plus me-2" aria-hidden="true"></i>Add to cart'; }, 1400);
                 return;
@@ -710,6 +715,16 @@
                 cart.splice(Number(removeButton.dataset.cartIndex), 1);
                 saveCart();
                 renderCart();
+                renderEnquiryItems();
+                return;
+            }
+
+            const removeEnquiryButton = event.target.closest('.remove-enquiry-item');
+            if (removeEnquiryButton) {
+                cart.splice(Number(removeEnquiryButton.dataset.cartIndex), 1);
+                saveCart();
+                renderCart();
+                renderEnquiryItems();
             }
         });
 
@@ -726,7 +741,7 @@
             }
             const items = cart.map((item, index) => `${index + 1}. ${item.code} - ${item.purpose}\nQuantity: ${item.quantity}\nColour: ${item.colour}\nMaterial: ${item.material}\nGrade: ${item.grade}\nSize: ${item.size}`);
             const message = `Hello RGR Plastics, I would like to request a quote:\n\n${items.join('\n\n')}\n\nPlease share your best price and availability.`;
-            window.open(`https://wa.me/919500369437?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+            window.open(`https://wa.me/${RGR_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
         });
 
         renderCart();
@@ -811,9 +826,6 @@
         // verification against Google, add a Supabase Edge Function/database
         // webhook that checks it after insert, since PostgREST can't call
         // external APIs on its own.
-        const SUPABASE_TABLE_URL = 'https://wxszbebddngjpyqgakdd.supabase.co/rest/v1/enquiry';
-        const SUPABASE_ANON_KEY = 'sb_publishable_W4bcyTGDbhQv-DRARj7PKA_pDYLoknm';
-
         const renderEnquiryItems = () => {
             enquiryCount.textContent = cart.length;
             enquiryCount.classList.toggle('d-none', !cart.length);
@@ -822,7 +834,7 @@
                 enquiryItems.innerHTML = '<p class="text-secondary">Your enquiry cart is empty.</p>';
                 return;
             }
-            enquiryItems.innerHTML = cart.map(item => `<div class="cart-item border-bottom pb-3 mb-3"><div class="d-flex gap-3"><img class="cart-item-image flex-shrink-0" src="img/products/${item.code.toLowerCase()}.png" onerror="this.onerror=null;this.src='img/products/container.jpg';" alt="${escapeHtml(item.purpose)}" width="56" height="56"><div class="flex-grow-1"><h3 class="h6 mb-1">${escapeHtml(item.purpose)}</h3><p class="small text-secondary mb-1">${escapeHtml(item.code)} · ${escapeHtml(item.material)} · ${escapeHtml(item.grade)}</p><p class="small mb-0">Quantity: ${item.quantity} · ${escapeHtml(item.colour)} · ${escapeHtml(item.size)}</p></div></div></div>`).join('');
+            enquiryItems.innerHTML = cart.map((item, index) => `<div class="cart-item border-bottom pb-3 mb-3"><div class="d-flex gap-3"><img class="cart-item-image flex-shrink-0" src="img/products/${item.code.toLowerCase()}.png" onerror="this.onerror=null;this.src='img/products/container.jpg';" alt="${escapeHtml(item.purpose)}" width="56" height="56"><div class="flex-grow-1"><div class="d-flex justify-content-between gap-2"><h3 class="h6 mb-1">${escapeHtml(item.purpose)}</h3><button type="button" class="btn btn-sm btn-link text-danger p-0 remove-enquiry-item" data-cart-index="${index}" aria-label="Remove ${escapeHtml(item.purpose)} from enquiry"><i class="fa-solid fa-trash" aria-hidden="true"></i></button></div><p class="small text-secondary mb-1">${escapeHtml(item.code)} · ${escapeHtml(item.material)} · ${escapeHtml(item.grade)}</p><p class="small mb-0">Quantity: ${item.quantity} · ${escapeHtml(item.colour)} · ${escapeHtml(item.size)}</p></div></div></div>`).join('');
         };
 
         const showEnquiryStep = step => {
@@ -845,6 +857,8 @@
             renderEnquiryItems();
             showEnquiryStep('cart');
         });
+
+        document.getElementById('enquiry-done').addEventListener('click', renderEnquiryItems);
 
         enquiryContinueBtn.addEventListener('click', () => {
             if (!cart.length) return;
@@ -938,11 +952,11 @@
             enquirySubmitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Submitting…';
 
             try {
-                const response = await fetch(SUPABASE_TABLE_URL, {
+                const response = await fetch(RGR_CONFIG.supabaseTableUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        apikey: SUPABASE_ANON_KEY,
+                        apikey: RGR_CONFIG.supabaseAnonKey,
                         Prefer: 'return=minimal'
                     },
                     body: JSON.stringify(row)
@@ -968,6 +982,7 @@
                 cart = [];
                 saveCart();
                 renderCart();
+                renderEnquiryItems();
 
                 enquiryForm.reset();
                 resetEnquiryCaptcha();
