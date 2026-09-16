@@ -200,6 +200,22 @@ const enquiryFormAlert = document.getElementById('enquiry-form-alert');
 const enquirySubmitBtn = document.getElementById('enquiry-submit');
 const enquiryCaptchaFeedback = document.getElementById('enq-captcha-feedback');
 
+const getServerDate = async () => {
+    const response = await fetch(window.RGR_CONFIG.supabaseTableUrl, {
+        method: 'HEAD',
+        headers: {
+            apikey: window.RGR_CONFIG.supabaseAnonKey
+        }
+    });
+
+    const dateHeader = response.headers.get('date');
+    if (!dateHeader) {
+        throw new Error('Unable to read server date');
+    }
+
+    return new Date(dateHeader);
+};
+
 const renderEnquiryItems = () => {
     enquiryCount.textContent = cart.length;
     enquiryCount.classList.toggle('d-none', !cart.length);
@@ -241,9 +257,9 @@ enquiryBackBtn.addEventListener('click', () => showEnquiryStep('cart'));
 
 const enquiryField = id => document.getElementById(id);
 
-const generateEnquiryId = () => {
-    const now = new Date();
-    const y = now.getFullYear();
+const generateEnquiryId = async () => {
+    const serverDate = await getServerDate();
+    const y = serverDate.getUTCFullYear();
     const rand = Math.random().toString(36).substring(3, 8).toUpperCase();
     return `RGR-ENQ-${rand}/${y}`;
 };
@@ -301,7 +317,7 @@ enquiryForm.addEventListener('submit', async event => {
         if (!valid) return;
     }
 
-    const enquiryId = generateEnquiryId();
+    const enquiryId = await generateEnquiryId();
     const row = {
         enquiry_id: enquiryId,
         company_name: companyName || null,
