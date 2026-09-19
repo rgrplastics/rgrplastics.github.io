@@ -340,6 +340,20 @@ section {
   --bs-btn-hover-color: #fff;
 }
 
+.back-to-top-float {
+  align-items: center;
+  border-radius: 50%;
+  bottom: 1.25rem;
+  display: inline-flex;
+  height: 3.25rem;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  right: 1.25rem;
+  width: 3.25rem;
+  z-index: 1080;
+}
+
 .cart-item h3 {
   color: var(--rgr-ink);
 }
