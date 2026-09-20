@@ -416,6 +416,7 @@
             </div>
             <div class="border-top border-secondary pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
                 <span class="text-white-50">&copy; 2026 RGR Plastics. All rights reserved.</span>
+                <span class="text-white-50">&copy; 2026 RGR Plastics. All rights reserved. <sub class="opacity-75" style="font-size: 0.7em;" id="app-version">v1.1.0</sub></span>
                 <div class="d-flex align-items-center gap-2 text-white-50 flex-wrap justify-content-md-end ms-auto">
                     <span>Design &amp; Developed by</span>
                     <a class="d-inline-flex align-items-center gap-2 link-light text-decoration-none fw-semibold" href="https://prabhuprabhakaran.info" target="_blank" rel="noopener noreferrer">
@@ -524,9 +525,49 @@
                     <div class="mb-3">
                         <label class="form-label small fw-semibold" for="enq-mobile">Mobile number <span
                                 class="text-danger">*</span></label>
-                        <input type="tel" class="form-control" id="enq-mobile" placeholder="10-digit mobile number" required>
-                        <div class="invalid-feedback">Enter a valid 10-digit mobile number.</div>
+                        <div class="input-group">
+                            <input type="tel" class="form-control" id="enq-mobile"
+                                placeholder="10-digit mobile number" inputmode="numeric"
+                                maxlength="10" autocomplete="tel-national" required>
+                            <button class="btn btn-outline-secondary" type="button" id="otp-send-btn"
+                                aria-label="Send OTP to verify this mobile number">
+                                <i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>Verify
+                            </button>
+                        </div>
+                        <div class="invalid-feedback" id="enq-mobile-feedback">Enter a valid 10-digit mobile number.</div>
+
+                        <!-- OTP entry row — hidden until OTP is sent -->
+                        <div id="otp-row" class="d-none mt-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="otp-input"
+                                    placeholder="Enter 6-digit OTP"
+                                    maxlength="6" inputmode="numeric" autocomplete="one-time-code"
+                                    aria-label="One-time password">
+                                <button class="btn btn-primary" type="button" id="otp-confirm-btn">
+                                    <i class="fa-solid fa-check me-1" aria-hidden="true"></i>Confirm
+                                </button>
+                            </div>
+                            <div id="otp-error" class="text-danger small mt-1 d-none" role="alert"></div>
+                            <div class="d-flex align-items-center gap-2 mt-1">
+                                <span class="small text-secondary" id="otp-resend-hint">
+                                    Didn't receive it?
+                                    <button type="button" id="otp-resend-btn"
+                                        class="btn btn-link btn-sm p-0 align-baseline"
+                                        disabled>Resend OTP</button>
+                                    <span id="otp-countdown" class="text-secondary small"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Verified badge — hidden until OTP confirmed -->
+                        <div id="otp-verified-badge" class="d-none mt-2 small text-success fw-semibold d-flex align-items-center justify-content-between">
+                            <span><i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>Mobile number verified</span>
+                            <button type="button" id="otp-change-btn" class="btn btn-link btn-sm p-0 text-decoration-underline text-secondary" aria-label="Change mobile number">Edit number</button>
+                        </div>
                     </div>
+
+                    <!-- Invisible Firebase reCAPTCHA anchor (required by Firebase SDK) -->
+                    <div id="firebase-recaptcha-container"></div>
                     <div class="mb-3">
                         <label class="form-label small fw-semibold" for="enq-whatsapp">WhatsApp number</label>
                         <input type="tel" class="form-control" id="enq-whatsapp" placeholder="10-digit WhatsApp number">
@@ -613,6 +654,10 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+    <!-- Firebase compat SDK (v10) — loaded before app scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="js/firebase-auth.js"></script>
     <script src="js/app.js"></script>
     <script src="js/quotation.js"></script>
 </body>

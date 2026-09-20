@@ -5,6 +5,14 @@ const setRecaptchaSiteKey = () => {
   }
 };
 
+const setAppVersion = () => {
+  const versionEl = document.getElementById("app-version");
+  if (versionEl && window.RGR_CONFIG && window.RGR_CONFIG.version) {
+    versionEl.textContent = `v${window.RGR_CONFIG.version}`;
+  }
+};
+
+setAppVersion();
 setRecaptchaSiteKey();
 
 bootstrap.ScrollSpy.getOrCreateInstance(document.body, {
@@ -284,11 +292,168 @@ const generateEnquiryId = async () => {
   return `RGR-ENQ-${rand}/${y}`;
 };
 
+// ─── OTP / Phone Auth UI ─────────────────────────────────────────────────────
+
+const mobileRe = /^[6-9]\d{9}$/;
+
+// OTP UI elements
+const otpSendBtn = document.getElementById("otp-send-btn");
+const otpRow = document.getElementById("otp-row");
+const otpInput = document.getElementById("otp-input");
+const otpConfirmBtn = document.getElementById("otp-confirm-btn");
+const otpError = document.getElementById("otp-error");
+const otpResendBtn = document.getElementById("otp-resend-btn");
+const otpCountdown = document.getElementById("otp-countdown");
+const otpVerifiedBadge = document.getElementById("otp-verified-badge");
+const mobileInput = enquiryField("enq-mobile");
+
+let otpCountdownTimer = null;
+const OTP_RESEND_SECONDS = 30;
+
+/** Show an error message in the OTP error callout */
+const showOtpError = (message) => {
+  otpError.textContent = message;
+  otpError.classList.remove("d-none");
+};
+
+const clearOtpError = () => otpError.classList.add("d-none");
+
+/** Start the resend cooldown countdown */
+const startResendCountdown = () => {
+  otpResendBtn.disabled = true;
+  let remaining = OTP_RESEND_SECONDS;
+  otpCountdown.textContent = `(${remaining}s)`;
+  if (otpCountdownTimer) clearInterval(otpCountdownTimer);
+  otpCountdownTimer = setInterval(() => {
+    remaining -= 1;
+    if (remaining <= 0) {
+      clearInterval(otpCountdownTimer);
+      otpCountdown.textContent = "";
+      otpResendBtn.disabled = false;
+    } else {
+      otpCountdown.textContent = `(${remaining}s)`;
+    }
+  }, 1000);
+};
+
+/** Reset the entire OTP UI back to initial state */
+const resetOtpUi = () => {
+  otpRow.classList.add("d-none");
+  otpVerifiedBadge.classList.add("d-none");
+  otpInput.value = "";
+  clearOtpError();
+  mobileInput.readOnly = false;
+  mobileInput.disabled = false;
+  otpSendBtn.disabled = false;
+  otpSendBtn.innerHTML = '<i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>Verify';
+  otpSendBtn.classList.remove("btn-outline-success");
+  otpSendBtn.classList.add("btn-outline-secondary");
+  mobileInput.classList.remove("is-valid", "is-invalid");
+  if (otpCountdownTimer) clearInterval(otpCountdownTimer);
+  otpCountdown.textContent = "";
+  otpResendBtn.disabled = true;
+  // Reset Firebase auth state
+  if (window.RGR_FIREBASE_AUTH) window.RGR_FIREBASE_AUTH.resetVerification();
+};
+
+/** Show the "verified" state on the mobile field */
+const markMobileVerified = () => {
+  otpRow.classList.add("d-none");
+  otpVerifiedBadge.classList.remove("d-none");
+  mobileInput.classList.add("is-valid");
+  mobileInput.classList.remove("is-invalid");
+  mobileInput.readOnly = true;
+  otpSendBtn.innerHTML = '<i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>Verified';
+  otpSendBtn.classList.remove("btn-outline-secondary");
+  otpSendBtn.classList.add("btn-outline-success");
+  otpSendBtn.disabled = true;
+};
+
+/** Trigger OTP send — shared by Verify button and Resend button */
+const doSendOtp = async () => {
+  const mobile = mobileInput.value.trim();
+  if (!mobileRe.test(mobile)) {
+    mobileInput.classList.add("is-invalid");
+    return;
+  }
+  mobileInput.classList.remove("is-invalid");
+  clearOtpError();
+
+  otpSendBtn.disabled = true;
+  otpSendBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>Sending…';
+
+  try {
+    await window.RGR_FIREBASE_AUTH.sendOtp("+91" + mobile);
+    // Show OTP row
+    otpRow.classList.remove("d-none");
+    otpInput.value = "";
+    otpInput.focus();
+    startResendCountdown();
+    otpSendBtn.innerHTML = '<i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>Verify';
+    // Re-enable so user can change number (clicking unlocks the field)
+    otpSendBtn.disabled = true; // locked while OTP row is shown; resend handles retry
+  } catch (err) {
+    console.error("[OTP] Send failed:", err);
+    const friendly = err.code === "auth/invalid-phone-number" ? "Invalid phone number. Please check and retry." : err.code === "auth/too-many-requests" ? "Too many attempts. Please wait a few minutes and try again." : err.code === "auth/captcha-check-failed" ? "reCAPTCHA verification failed. Please ensure your domain is added to Firebase Authorized Domains." : err.code === "auth/invalid-app-credential" ? "Invalid App Credential or App Check required. Please check your Firebase settings." : err.message || "Failed to send OTP. Please try again.";
+    showOtpError(friendly);
+    otpSendBtn.disabled = false;
+    otpSendBtn.innerHTML = '<i class="fa-solid fa-shield-halved me-1" aria-hidden="true"></i>Verify';
+  }
+};
+
+// "Verify" button
+otpSendBtn.addEventListener("click", doSendOtp);
+
+// "Resend OTP" button
+otpResendBtn.addEventListener("click", doSendOtp);
+
+// "Edit number" button
+const otpChangeBtn = document.getElementById("otp-change-btn");
+if (otpChangeBtn) {
+  otpChangeBtn.addEventListener("click", () => {
+    resetOtpUi();
+    mobileInput.focus();
+  });
+}
+
+// "Confirm OTP" button
+otpConfirmBtn.addEventListener("click", async () => {
+  const code = otpInput.value.trim();
+  if (!/^\d{6}$/.test(code)) {
+    showOtpError("Please enter the 6-digit OTP.");
+    return;
+  }
+  clearOtpError();
+
+  otpConfirmBtn.disabled = true;
+  otpConfirmBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1" aria-hidden="true"></span>Confirming…';
+
+  try {
+    await window.RGR_FIREBASE_AUTH.verifyOtp(code);
+    markMobileVerified();
+  } catch (err) {
+    console.error("[OTP] Confirm failed:", err);
+    const friendly = err.code === "auth/invalid-verification-code" ? "Incorrect OTP. Please check and try again." : err.code === "auth/code-expired" ? "OTP has expired. Please request a new one." : "OTP verification failed. Please try again.";
+    showOtpError(friendly);
+  } finally {
+    otpConfirmBtn.disabled = false;
+    otpConfirmBtn.innerHTML = '<i class="fa-solid fa-check me-1" aria-hidden="true"></i>Confirm';
+  }
+});
+
+// Reset verification when the user edits the mobile number
+mobileInput.addEventListener("input", () => {
+  if (window.RGR_FIREBASE_AUTH?.isVerified) {
+    resetOtpUi();
+  }
+});
+
+// ─── Enquiry Form Submit ──────────────────────────────────────────────────────
+
 enquiryForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   enquiryFormAlert.classList.add("d-none");
 
-  const mobileRe = /^[6-9]\d{9}$/;
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const companyName = enquiryField("enq-company").value.trim();
@@ -296,7 +461,7 @@ enquiryForm.addEventListener("submit", async (event) => {
   const lastName = enquiryField("enq-last-name").value.trim();
   const designation = enquiryField("enq-designation").value.trim();
   const address = enquiryField("enq-address").value.trim();
-  const mobile = enquiryField("enq-mobile").value.trim();
+  const mobile = mobileInput.value.trim();
   const whatsapp = enquiryField("enq-whatsapp").value.trim();
   const email = enquiryField("enq-email").value.trim();
 
@@ -311,9 +476,22 @@ enquiryForm.addEventListener("submit", async (event) => {
   enquiryField("enq-address").classList.toggle("is-invalid", !address);
   if (!address) valid = false;
 
+  // Mobile — must be valid AND verified (unless localhost dev)
   const mobileBad = !mobileRe.test(mobile);
-  enquiryField("enq-mobile").classList.toggle("is-invalid", mobileBad);
-  if (mobileBad) valid = false;
+  const mobileUnverified = !window.RGR_FIREBASE_AUTH?.isVerified;
+
+  if (mobileBad) {
+    mobileInput.classList.add("is-invalid");
+    document.getElementById("enq-mobile-feedback").textContent = "Enter a valid 10-digit mobile number.";
+    valid = false;
+  } else if (mobileUnverified) {
+    mobileInput.classList.add("is-invalid");
+    document.getElementById("enq-mobile-feedback").textContent = "Please verify your mobile number with OTP before submitting.";
+    valid = false;
+  } else {
+    mobileInput.classList.remove("is-invalid");
+    document.getElementById("enq-mobile-feedback").textContent = "Enter a valid 10-digit mobile number.";
+  }
 
   const whatsappBad = whatsapp !== "" && !mobileRe.test(whatsapp);
   const emailBad = email !== "" && !emailRe.test(email);
@@ -333,12 +511,10 @@ enquiryForm.addEventListener("submit", async (event) => {
   if (!valid) return;
 
   let recaptchaToken = "";
-  if (!/localhost:\d+/.test(window.location.host)) {
-    recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : "";
-    const captchaOk = recaptchaToken.length > 0;
-    enquiryCaptchaFeedback.classList.toggle("d-none", captchaOk);
-    if (!captchaOk) valid = false;
-  }
+  recaptchaToken = recaptchaReady() ? window.grecaptcha.getResponse() : "";
+  const captchaOk = recaptchaToken.length > 0;
+  enquiryCaptchaFeedback.classList.toggle("d-none", captchaOk);
+  if (!captchaOk) valid = false;
 
   if (!valid) return;
 
@@ -346,6 +522,12 @@ enquiryForm.addEventListener("submit", async (event) => {
   enquirySubmitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Submitting…';
 
   try {
+    // Refresh Firebase token in case it is close to expiry (tokens last 1 hour)
+    let idToken = null;
+    if (window.RGR_FIREBASE_AUTH?.isVerified) {
+      idToken = await window.RGR_FIREBASE_AUTH.refreshToken();
+    }
+
     const enquiryId = await generateEnquiryId();
     const row = {
       enquiry_id: enquiryId,
@@ -362,13 +544,20 @@ enquiryForm.addEventListener("submit", async (event) => {
       recaptcha_token: recaptchaToken || "localhost",
     };
 
+    const headers = {
+      "Content-Type": "application/json",
+      apikey: window.RGR_CONFIG.supabaseAnonKey,
+      Prefer: "return=minimal",
+    };
+
+    // Attach Firebase ID token as Bearer for authenticated Supabase RLS
+    if (idToken) {
+      headers["Authorization"] = `Bearer ${idToken}`;
+    }
+
     const response = await fetch(window.RGR_CONFIG.supabaseTableUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        apikey: window.RGR_CONFIG.supabaseAnonKey,
-        Prefer: "return=minimal",
-      },
+      headers,
       body: JSON.stringify(row),
     });
 
@@ -409,6 +598,7 @@ enquiryForm.addEventListener("submit", async (event) => {
     renderEnquiryItems();
 
     enquiryForm.reset();
+    resetOtpUi();
     resetEnquiryCaptcha();
     showEnquiryStep("success");
   } catch (error) {
