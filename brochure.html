@@ -511,261 +511,6 @@
         }
 
         /* -------------------------------------------------------------
-           FULL-PAGE SPOTLIGHT ADVERTISEMENT: OIL CONTAINERS
-           ------------------------------------------------------------- */
-        .ad-page-oil {
-            background: linear-gradient(170deg, #ffffff 0%, #f0f7ff 60%, #e2eef9 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .ad-top-badge {
-            background: linear-gradient(90deg, var(--red) 0%, #d31225 100%);
-            color: #fff;
-            font-family: "Michroma", sans-serif;
-            font-size: 6.5pt;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            padding: 1.5mm 5mm;
-            border-radius: 4px;
-            display: inline-block;
-            text-transform: uppercase;
-        }
-
-        .ad-hero-banner {
-            background: #ffffff;
-            border: 1.5px solid var(--navy);
-            border-radius: 10px;
-            padding: 5mm 6mm;
-            display: grid;
-            grid-template-columns: 1fr 1.15fr;
-            gap: 6mm;
-            align-items: center;
-            box-shadow: 0 8px 24px rgba(13, 71, 120, 0.08);
-            position: relative;
-            margin: 3.5mm 0;
-        }
-
-        .ad-hero-banner::before {
-            content: "FEATURED CONTAINER";
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--navy-deep);
-            color: #fff;
-            font-family: "Michroma", sans-serif;
-            font-size: 5.5pt;
-            padding: 1mm 3.5mm;
-            border-radius: 0 8px 0 6px;
-            letter-spacing: 0.08em;
-        }
-
-        .ad-img-wrapper {
-            height: 64mm;
-            background: radial-gradient(circle, #ffffff 40%, #eef5fc 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3mm;
-            position: relative;
-            border: 1px solid #dbe6f2;
-        }
-
-        .ad-img-wrapper img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 20px rgba(13, 71, 120, 0.2));
-        }
-
-        .ad-img-tag {
-            position: absolute;
-            bottom: 3mm;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--red);
-            color: #fff;
-            font-family: "Michroma", sans-serif;
-            font-size: 6pt;
-            font-weight: 700;
-            padding: 1.2mm 4mm;
-            border-radius: 20px;
-            white-space: nowrap;
-            letter-spacing: 0.06em;
-            box-shadow: 0 3px 8px rgba(237, 27, 47, 0.3);
-        }
-
-        .ad-hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5mm;
-        }
-
-        .ad-main-title {
-            font-family: "Monda", sans-serif;
-            font-size: 20pt;
-            font-weight: 700;
-            color: var(--navy-deep);
-            line-height: 1.12;
-            margin: 0;
-            letter-spacing: -0.01em;
-        }
-
-        .ad-subtitle {
-            font-size: 8.5pt;
-            color: var(--muted);
-            line-height: 1.45;
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .ad-size-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5mm;
-            margin-top: 1mm;
-        }
-
-        .size-pill {
-            background: #eef5fc;
-            color: var(--navy-deep);
-            font-weight: 700;
-            font-size: 7.5pt;
-            padding: 1.2mm 3.5mm;
-            border-radius: 4px;
-            border: 1px solid #cbd5e1;
-        }
-
-        .ad-features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5mm;
-            margin: 3.5mm 0;
-        }
-
-        .ad-feature-card {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-left: 4px solid var(--red);
-            border-radius: 6px;
-            padding: 3.5mm 4.5mm;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-        }
-
-        .ad-feature-card h4 {
-            font-family: "Monda", sans-serif;
-            font-size: 9.5pt;
-            color: var(--navy-deep);
-            margin: 0 0 1mm;
-            display: flex;
-            align-items: center;
-            gap: 2mm;
-        }
-
-        .ad-feature-card h4 i {
-            color: var(--red);
-            font-size: 10.5pt;
-        }
-
-        .ad-feature-card p {
-            font-size: 7.2pt;
-            color: var(--muted);
-            margin: 0;
-            line-height: 1.35;
-        }
-
-        .ad-specs-table-box {
-            background: #fff;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 3.5mm 4.5mm;
-            margin-bottom: 3.5mm;
-        }
-
-        .ad-specs-table-box h4 {
-            font-family: "Monda", sans-serif;
-            font-size: 10pt;
-            color: var(--navy-deep);
-            margin: 0 0 2.5mm;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .ad-specs-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2.5mm;
-            text-align: center;
-        }
-
-        .spec-column-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 5px;
-            padding: 2.5mm 1.5mm;
-        }
-
-        .spec-column-card strong {
-            display: block;
-            font-family: "Michroma", sans-serif;
-            font-size: 8.5pt;
-            color: var(--red);
-            margin-bottom: 1mm;
-        }
-
-        .spec-column-card span {
-            display: block;
-            font-size: 6.8pt;
-            color: var(--ink);
-            line-height: 1.3;
-            font-weight: 600;
-        }
-
-        .ad-cta-banner {
-            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-            color: #fff;
-            border-radius: 8px;
-            padding: 4mm 6mm;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4mm;
-            box-shadow: 0 4px 14px rgba(8, 50, 84, 0.25);
-        }
-
-        .ad-cta-left h3 {
-            font-family: "Monda", sans-serif;
-            font-size: 11.5pt;
-            margin: 0 0 1mm;
-            color: #fff;
-        }
-
-        .ad-cta-left p {
-            font-size: 7.5pt;
-            color: #cbd5e1;
-            margin: 0;
-            line-height: 1.3;
-        }
-
-        .ad-phone-badge {
-            background: var(--red);
-            color: #fff;
-            font-weight: 700;
-            font-size: 9.5pt;
-            padding: 2.5mm 5mm;
-            border-radius: 6px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 2mm;
-            white-space: nowrap;
-            box-shadow: 0 3px 10px rgba(237, 27, 47, 0.35);
-        }
-
-        /* -------------------------------------------------------------
            CATALOGUE PAGES (PAGES 2, 3, 4) STYLING
            ------------------------------------------------------------- */
         .catalog-section-bar {
@@ -1141,12 +886,8 @@
             .cover-applications-grid,
             .cover-features-bar,
             .services-grid,
-            .page5-top-products,
-            .ad-hero-banner,
-            .ad-features-grid,
-            .ad-specs-grid,
-            .ad-cta-banner {
-                grid-template-columns: 1fr;
+            .page5-top-products {
+                grid-template-columns: 1fr 1fr;
             }
 
             .cover-contact-panel,
@@ -1160,8 +901,7 @@
             .cover-applications-grid,
             .cover-features-bar,
             .services-grid,
-            .page5-top-products,
-            .ad-specs-grid {
+            .page5-top-products {
                 grid-template-columns: 1fr;
             }
         }
@@ -1179,7 +919,7 @@
 
         <nav class="toolbar-nav" aria-label="Brochure Pages">
             <a href="#page-1" class="toolbar-nav-link">Cover Page</a>
-            <a href="#page-oil-ad" class="toolbar-nav-link" style="color: #fbbf24;"><i class="fa-solid fa-star me-1"></i>Oil Containers Ad</a>
+            <a href="oil-container-spotlight.html" target="_blank" class="toolbar-nav-link" style="color: #fbbf24;"><i class="fa-solid fa-star me-1"></i>Oil Spotlight Ad</a>
             <a href="#page-2" class="toolbar-nav-link">Page 1</a>
             <a href="#page-3" class="toolbar-nav-link">Page 2</a>
             <a href="#page-4" class="toolbar-nav-link">Page 3</a>
@@ -1300,114 +1040,7 @@
 
 
         <!-- =========================================================
-             PAGE 2: FULL-PAGE SPOTLIGHT ADVERTISEMENT: OIL CONTAINERS
-             ========================================================= -->
-        <article class="a4-page ad-page-oil" id="page-oil-ad">
-            <header class="page-header">
-                <div class="header-brand">
-                    <img src="img/rgr/logo.png" alt="RGR Plastics Logo" class="header-logo">
-                    <div class="header-brand-info">
-                        <span class="header-tag">RGR PLASTICS</span>
-                        <span class="header-sub">Kumbakonam, Tamilnadu</span>
-                    </div>
-                </div>
-                <div class="header-meta">
-                    <span class="ad-top-badge"><i class="fa-solid fa-star me-1"></i>PRODUCT SPOTLIGHT</span>
-                    <a href="tel:+919500369437" class="header-contact-inline"><i class="fa-solid fa-phone"></i> +91 95003 69437</a>
-                </div>
-            </header>
-
-            <!-- AD HERO BANNER -->
-            <section class="ad-hero-banner">
-                <div class="ad-img-wrapper">
-                    <img src="img/products/rgr-010.png" alt="RGR-010 HDPE Oil Containers Range">
-                    <span class="ad-img-tag">MODEL: RGR-010</span>
-                </div>
-                <div class="ad-hero-content">
-                    <h1 class="ad-main-title">ENGINEERED FOR PERFECT LEAK-PROOF OIL PACKAGING</h1>
-                    <p class="ad-subtitle">High-Density Polyethylene (HDPE) Oil Containers manufactured for Edible Oils, Lubricants, Essential Oils &amp; Industrial Liquids.</p>
-                    <div class="ad-size-pills">
-                        <span class="size-pill"><i class="fa-solid fa-flask me-1"></i>100ml</span>
-                        <span class="size-pill"><i class="fa-solid fa-flask me-1"></i>200ml</span>
-                        <span class="size-pill"><i class="fa-solid fa-flask me-1"></i>500ml</span>
-                        <span class="size-pill"><i class="fa-solid fa-flask me-1"></i>1000ml (1 Litre)</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- KEY ADVANTAGES GRID -->
-            <section class="ad-features-grid" aria-label="Oil Container Advantages">
-                <div class="ad-feature-card">
-                    <h4><i class="fa-solid fa-droplet-slash"></i> 100% Zero Leakage Sealing</h4>
-                    <p>Precision-molded neck threading and tamper-evident cap closures prevent oil seepage, spills, and airborne oxidation during transit and storage.</p>
-                </div>
-                <div class="ad-feature-card">
-                    <h4><i class="fa-solid fa-shield-halved"></i> High Drop Impact Resistance</h4>
-                    <p>Molded using heavy-duty Virgin HDPE resin for consistent wall thickness, structural rigidity, and resistance against crushing or puncture.</p>
-                </div>
-                <div class="ad-feature-card">
-                    <h4><i class="fa-solid fa-leaf"></i> 100% Food-Grade Safe Material</h4>
-                    <p>US-FDA compliant non-toxic HDPE material suitable for packaging Coconut oil, Gingelly oil, Mustard oil, Cooking oils &amp; Ghee.</p>
-                </div>
-                <div class="ad-feature-card">
-                    <h4><i class="fa-solid fa-palette"></i> Custom Color &amp; Sticker Surface</h4>
-                    <p>Available in pristine opaque White finish with smooth outer surface optimized for crisp brand label adhesion and printing.</p>
-                </div>
-            </section>
-
-            <!-- CAPACITY & SPECIFICATION MATRIX -->
-            <section class="ad-specs-table-box">
-                <h4>
-                    <span><i class="fa-solid fa-list-check me-2" style="color: var(--red);"></i> Available Oil Container Sizes &amp; Specifications</span>
-                    <span style="font-size: 7.5pt; font-family: 'DM Sans', sans-serif; color: var(--muted); font-weight: normal;">Grade: Virgin HDPE • Color: White</span>
-                </h4>
-                <div class="ad-specs-grid">
-                    <div class="spec-column-card">
-                        <strong>100 ml</strong>
-                        <span>Neck: Standard Cap<br>Use: Hair &amp; Essential Oil</span>
-                    </div>
-                    <div class="spec-column-card">
-                        <strong>200 ml</strong>
-                        <span>Neck: Standard Cap<br>Use: Herbal &amp; Coconut Oil</span>
-                    </div>
-                    <div class="spec-column-card">
-                        <strong>500 ml</strong>
-                        <span>Neck: Threaded Cap<br>Use: Edible &amp; Cooking Oil</span>
-                    </div>
-                    <div class="spec-column-card">
-                        <strong>1000 ml</strong>
-                        <span>Neck: 1L Threaded Cap<br>Use: Commercial &amp; Lube Oil</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- CALL TO ACTION BANNER -->
-            <section class="ad-cta-banner">
-                <div class="ad-cta-left">
-                    <h3>Upgrade Your Oil Brand Packaging Today</h3>
-                    <p>Bulk factory manufacturing with custom branding options. Fast dispatch across Tamilnadu &amp; South India.</p>
-                </div>
-                <div class="ad-cta-right">
-                    <a href="https://wa.me/919500369437?text=Hi%20RGR%20Plastics,%20I%20want%20a%20quote%20for%20RGR-010%20Oil%20Containers." target="_blank" rel="noopener" class="ad-phone-badge">
-                        <i class="fa-brands fa-whatsapp"></i> Order Oil Containers
-                    </a>
-                </div>
-            </section>
-
-            <!-- AD PAGE FOOTER -->
-            <footer class="page-footer">
-                <span class="footer-brand-text">RGR PLASTICS • OIL CONTAINER ADVERTISEMENT</span>
-                <div class="footer-contacts">
-                    <span><i class="fa-brands fa-whatsapp"></i> +91 95003 69437</span>
-                    <span><i class="fa-solid fa-globe"></i> rgrplastics.in</span>
-                </div>
-                <span>SPOTLIGHT AD</span>
-            </footer>
-        </article>
-
-
-        <!-- =========================================================
-             PAGE 3: CATALOGUE PAGE 1 (PRODUCTS 1 - 6)
+             PAGE 2: CATALOGUE PAGE 1 (PRODUCTS 1 - 6)
              ========================================================= -->
         <article class="a4-page" id="page-2">
             <header class="page-header">
@@ -1538,7 +1171,7 @@
 
 
         <!-- =========================================================
-             PAGE 4: CATALOGUE PAGE 2 (PRODUCTS 7 - 12)
+             PAGE 3: CATALOGUE PAGE 2 (PRODUCTS 7 - 12)
              ========================================================= -->
         <article class="a4-page" id="page-3">
             <header class="page-header">
@@ -1669,7 +1302,7 @@
 
 
         <!-- =========================================================
-             PAGE 5: CATALOGUE PAGE 3 (PRODUCTS 13 - 18)
+             PAGE 4: CATALOGUE PAGE 3 (PRODUCTS 13 - 18)
              ========================================================= -->
         <article class="a4-page" id="page-4">
             <header class="page-header">
@@ -1800,7 +1433,7 @@
 
 
         <!-- =========================================================
-             PAGE 6: CATALOGUE PAGE 4 & BACK COVER (PRODUCTS 19 - 21)
+             PAGE 5: CATALOGUE PAGE 4 & BACK COVER (PRODUCTS 19 - 21)
              ========================================================= -->
         <article class="a4-page" id="page-5">
             <header class="page-header">
