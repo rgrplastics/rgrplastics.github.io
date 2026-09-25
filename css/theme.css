@@ -314,6 +314,10 @@ section {
   z-index: 1080;
 }
 
+#cart-toggle {
+  display: none !important;
+}
+
 .cart-count {
   background-color: var(--rgr-red);
   border: 2px solid #fff;
