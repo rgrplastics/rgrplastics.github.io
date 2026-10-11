@@ -40,7 +40,7 @@ const drawPageFooter = (pdf, pageNumber, pageWidth, pageHeight) => {
   pdf.setFont("helvetica", "normal");
   pdf.setFontSize(7);
   pdf.setTextColor(83, 97, 106);
-  pdf.text("RGR Plastics and Traders | Product Enquiry", 10, pageHeight - 4.5);
+  pdf.text("RGR Plastics & Traders | Product Enquiry", 10, pageHeight - 4.5);
   pdf.text(`Page ${pageNumber}/${pdf.internal.getNumberOfPages()}`, pageWidth - 10, pageHeight - 4.5, { align: "right" });
 };
 
@@ -112,7 +112,7 @@ const downloadEnquiryPdf = async (payload = window.RGR_LATEST_ENQUIRY || null) =
   pdf.setFont("helvetica", "bold");
   pdf.setFontSize(10);
   pdf.setTextColor(...accent);
-  pdf.text("RGR Plastics and Traders", companyTextX + 3, companyTop + 5.5);
+  pdf.text("RGR Plastics & Traders", companyTextX + 3, companyTop + 5.5);
   pdf.setFont("helvetica", "normal");
   pdf.setFontSize(8);
   pdf.text("2/501-B Railway Station Road, Thiruvalanjuli, Kumbakonam, Thanjavur - 612302", companyTextX + 3, companyTop + 10.5);

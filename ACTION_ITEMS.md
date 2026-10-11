@@ -28,8 +28,8 @@
 
 - [ ] Fix the unmatched `.container` structure in the contact section.
 - [ ] Normalize spelling to `Tamil Nadu` across page copy, metadata, and structured data.
-- [ ] Remove trailing whitespace from material values in `assests/products.json`.
-- [ ] Add JSON validation for `assests/products.json` before deployment.
+- [ ] Remove trailing whitespace from material values in `assets/products.json`.
+- [ ] Add JSON validation for `assets/products.json` before deployment.
 - [ ] Verify every product code has a matching image.
 
 ## Phase 2: Performance and SEO
@@ -91,7 +91,7 @@
 - [ ] Add HTML, CSS, JavaScript, and JSON linting.
 - [ ] Add automated checks for broken links and missing image references.
 - [ ] Add a CI workflow that runs validation before deployment.
-- [ ] Rename `assests` to `assets` with a compatibility transition plan.
+- [x] Rename `assests` to `assets` with a compatibility transition plan.
 - [ ] Add browser testing for product loading, cart persistence, quantity validation, and WhatsApp quote generation.
 - [ ] Keep application code, content data, and presentation styles in separate files.
 

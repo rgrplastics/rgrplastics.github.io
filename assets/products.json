@@ -1,0 +1,426 @@
+[
+  {
+    "product_code": "RGR-010",
+    "display_order": 1,
+    "purpose": "Oil Containers",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["100ml", "200ml", "500ml", "1000ml"],
+    "dimensions": [
+      {
+        "size": "1000ml",
+        "length": "24 CM",
+        "diameter": "8 CM",
+        "mouth": "2.8 CM",
+        "inner_length": null
+      },
+      {
+        "size": "500ml",
+        "length": "19 CM",
+        "diameter": "5.5 CM",
+        "mouth": "2.8 CM",
+        "inner_length": null
+      },
+      {
+        "size": "200ml",
+        "length": "14 CM",
+        "diameter": "4.5 CM",
+        "mouth": "2.3 CM",
+        "inner_length": null
+      },
+      {
+        "size": "100ml",
+        "length": "10.5 CM",
+        "diameter": "3.5 CM",
+        "mouth": "2.3 CM",
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-002",
+    "display_order": 2,
+    "purpose": "Acid Bottle",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["500ml", "1000ml"],
+    "dimensions": [
+      {
+        "size": "1000ml",
+        "length": "26 CM",
+        "diameter": "7.5 CM",
+        "mouth": "3 CM",
+        "inner_length": null
+      },
+      {
+        "size": "500ml",
+        "length": "20 CM",
+        "diameter": "6.5 CM",
+        "mouth": "3 CM",
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-001",
+    "display_order": 3,
+    "purpose": "Sunnambu/Hydrated lime",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "5.1 CM",
+        "diameter": "4 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-003",
+    "display_order": 4,
+    "purpose": "Pain Balm",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4 CM",
+        "diameter": "3 CM",
+        "mouth": null,
+        "inner_length": "3.8 CM"
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-1",
+    "display_order": 5,
+    "purpose": "Camphor - No.2",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "3.9 CM",
+        "diameter": "2.2 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-2",
+    "display_order": 6,
+    "purpose": "Camphor Thick",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "3.8 CM",
+        "diameter": "3.5 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-005-2",
+    "display_order": 7,
+    "purpose": "Camphor - No.1 / Specimen Container",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4.3 CM",
+        "diameter": "3 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-6",
+    "display_order": 8,
+    "purpose": "Camphor - No.1",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4.3 CM",
+        "diameter": "3 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-7",
+    "display_order": 9,
+    "purpose": "Camphor - No.3",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4.6 CM",
+        "diameter": "3.8 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-3",
+    "display_order": 10,
+    "purpose": "Camphor - No.3",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4.6 CM",
+        "diameter": "3.8 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-005-1",
+    "display_order": 11,
+    "purpose": "Camphor Medium / Sandal Powder (A Grade) / Carrom Powder",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "5 CM",
+        "diameter": "4 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-4",
+    "display_order": 12,
+    "purpose": "Camphor Medium",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "5 CM",
+        "diameter": "4 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-5",
+    "display_order": 13,
+    "purpose": "Camphor Large / Sandal Tablets / Sandal Powder",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "7.2 CM",
+        "diameter": "4.8 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-004-8",
+    "display_order": 14,
+    "purpose": "Camphor XL / Panchamirtham",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["200ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "8.3 CM",
+        "diameter": "6.2 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-005-3",
+    "display_order": 15,
+    "purpose": "Sandal Tablets",
+    "colours": ["Green", "Blue", "Yellow"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["150ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "8 CM",
+        "diameter": "6.2 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-005-4",
+    "display_order": 16,
+    "purpose": "Sandal Powder / Panchamirtham",
+    "colours": ["Transparent"],
+    "material": "Virgin",
+    "grade": "PP",
+    "size": ["100ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "7 CM",
+        "diameter": "6.2 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-006-1",
+    "display_order": 17,
+    "purpose": "Pachamirtham",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["300ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "7.8 CM",
+        "diameter": "6.8 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-012",
+    "display_order": 17,
+    "purpose": "Panchamirtham",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["500ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "~10.2 CM",
+        "diameter": "~8.3 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-006-2",
+    "display_order": 18,
+    "purpose": "Pachamirtham",
+    "colours": ["Half White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["150ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "7.5 CM",
+        "diameter": "6 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-008",
+    "display_order": 19,
+    "purpose": "Panner Bottle",
+    "colours": ["White"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["40ml"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "10.3 CM",
+        "diameter": null,
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-009",
+    "display_order": 20,
+    "purpose": "Doop Cone",
+    "colours": ["Red"],
+    "material": "Reprocessed ",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "4.5 CM",
+        "diameter": "1.8 CM",
+        "mouth": null,
+        "inner_length": null
+      }
+    ]
+  },
+  {
+    "product_code": "RGR-011",
+    "display_order": 21,
+    "purpose": "20L Oil Tin Lid",
+    "colours": ["Red", "Green"],
+    "material": "Virgin",
+    "grade": "HDPE",
+    "size": ["Standard"],
+    "dimensions": [
+      {
+        "size": null,
+        "length": "3.5 CM",
+        "diameter": "3.5 CM",
+        "mouth": "5 CM",
+        "inner_length": null
+      }
+    ]
+  }
+]

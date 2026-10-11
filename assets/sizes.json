@@ -1,0 +1,202 @@
+[
+  {
+    "Size": "1l",
+    "code": "RGR - 010",
+    "Length": "24 CM",
+    "Diameter": "8 CM",
+    "Mouth": "2.8 CM",
+    "inner length": null
+  },
+  {
+    "Size": "500ml",
+    "code": "RGR - 010",
+    "Length": "19 CM",
+    "Diameter": "5.5 CM",
+    "Mouth": "2.8 CM",
+    "inner length": null
+  },
+  {
+    "Size": "200ml",
+    "code": "RGR - 010",
+    "Length": "14 CM",
+    "Diameter": "4.5 CM",
+    "Mouth": "2.3CM",
+    "inner length": null
+  },
+  {
+    "Size": "100ml",
+    "code": "RGR - 010",
+    "Length": "10.5 CM",
+    "Diameter": "3.5 CM",
+    "Mouth": "2.3CM",
+    "inner length": null
+  },
+  {
+    "Size": "1000ml",
+    "code": "RGR - 002",
+    "Length": "26 CM",
+    "Diameter": "7.5 CM",
+    "Mouth": "3 CM",
+    "inner length": null
+  },
+  {
+    "Size": "500ml",
+    "code": "RGR - 002",
+    "Length": "20 CM",
+    "Diameter": "6.5 CM",
+    "Mouth": "3 CM",
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 001",
+    "Length": "5.1 CM",
+    "Diameter": "4 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 003",
+    "Length": "4 CM",
+    "Diameter": "3 CM",
+    "Mouth": null,
+    "inner length": "3.8 CM"
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -1",
+    "Length": "3.9 CM",
+    "Diameter": "2.2 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -2",
+    "Length": "3.8 CM",
+    "Diameter": "3.5 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 005 -2",
+    "Length": "4.3 CM",
+    "Diameter": "3 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -6",
+    "Length": "4.3 CM",
+    "Diameter": "3 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -7",
+    "Length": "4.6 CM",
+    "Diameter": "3.8 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -3",
+    "Length": "4.6 CM",
+    "Diameter": "3.8 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 005-1",
+    "Length": "5 CM",
+    "Diameter": "4 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -4",
+    "Length": "5 CM",
+    "Diameter": "4 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004 -5",
+    "Length": "7.2 CM",
+    "Diameter": "4.8 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 004-8",
+    "Length": "8.3 CM",
+    "Diameter": "6.2 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 005-3",
+    "Length": "8 CM",
+    "Diameter": "6.2 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 005-4",
+    "Length": "7 CM",
+    "Diameter": "6.2 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 006 -1",
+    "Length": "7.8 CM",
+    "Diameter": "6.8 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 006 -2",
+    "Length": "7.5 CM",
+    "Diameter": "6 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 008",
+    "Length": "10.3 CM",
+    "Diameter": null,
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 009",
+    "Length": "4.5 CM",
+    "Diameter": "1.8 CM",
+    "Mouth": null,
+    "inner length": null
+  },
+  {
+    "Size": null,
+    "code": "RGR - 011",
+    "Length": "3.5 CM",
+    "Diameter": "3.5 CM",
+    "Mouth": "5 CM",
+    "inner length": null
+  }
+]

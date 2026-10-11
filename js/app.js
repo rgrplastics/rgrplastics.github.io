@@ -33,7 +33,7 @@ const escapeHtml = (value) =>
       })[character],
   );
 
-fetch("assests/products.json")
+fetch("assets/products.json")
   .then((response) => {
     if (!response.ok) throw new Error("Unable to load products");
     return response.json();
@@ -60,7 +60,7 @@ fetch("assests/products.json")
     productSchema.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "RGR Plastics product range",
+      name: "RGR Plastics & Traders product range",
       itemListElement: [...products]
         .sort((a, b) => (a.display_order ?? Number.MAX_SAFE_INTEGER) - (b.display_order ?? Number.MAX_SAFE_INTEGER))
         .map((item, index) => ({
@@ -187,7 +187,7 @@ document.getElementById("request-quote").addEventListener("click", () => {
     return;
   }
   const items = cart.map((item, index) => `${index + 1}. ${item.code} - ${item.purpose}\nQuantity: ${item.quantity}\nColour: ${item.colour}\nMaterial: ${item.material}\nGrade: ${item.grade}\nSize: ${item.size}`);
-  const message = `Hello RGR Plastics, I would like to request a quote:\n\n${items.join("\n\n")}\n\nPlease share your best price and availability.`;
+  const message = `Hello RGR Plastics & Traders, I would like to request a quote:\n\n${items.join("\n\n")}\n\nPlease share your best price and availability.`;
   window.open(`https://wa.me/${window.RGR_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
 });
 

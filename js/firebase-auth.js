@@ -1,6 +1,6 @@
 /**
  * firebase-auth.js
- * Firebase Phone OTP authentication for the RGR Plastics enquiry form.
+ * Firebase Phone OTP authentication for the RGR Plastics & Traders enquiry form.
  * Depends on: window.RGR_CONFIG (config.js loaded first),
  *             Firebase compat SDK v10 loaded via CDN in index.html.
  */
